@@ -1,0 +1,21 @@
+<div class="container">
+    <!-- Buttons -->
+    <div class="button-group">
+      <button [ngClass]="{ active: activeTab === 'memories' }" (click)="setTab('memories')">
+        Memories
+      </button>
+      <button [ngClass]="{ active: activeTab === 'videos' }" (click)="setTab('videos')">
+        Videos
+      </button>
+      <button [ngClass]="{ active: activeTab === 'reviews' }" (click)="setTab('reviews')">
+        Reviews
+      </button>
+    </div>
+  
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <app-memories-section *ngIf="activeTab === 'memories'"></app-memories-section>
+      <app-videos-section *ngIf="activeTab === 'videos'"></app-videos-section>
+      <app-reviews-section *ngIf="activeTab === 'reviews'"></app-reviews-section>
+    </div>
+  </div>

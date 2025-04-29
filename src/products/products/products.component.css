@@ -1,0 +1,136 @@
+.products-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+
+  @media (min-width: 768px) {
+    .product-card {
+      flex-direction: row;
+    }
+  }
+
+  .product-card {
+    display: flex;
+    background-color: #e4f4f3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .category-details {
+      flex: 1;
+      padding: 4rem;
+
+      .category-name {
+        text-transform: uppercase;
+        color: #139186;
+        font-weight: 800;
+        margin-bottom: 0.7rem;
+        font-size: 2rem;
+      }
+
+      .category-subtitle {
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        color: #333;
+        font-size: 18px;
+
+
+        .arrow {
+          color: #00b3b3;
+          margin-right: 4px;
+        }
+      }
+
+      .category-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.5rem;
+          color: #444;
+          text-transform: capitalize;
+          font-size: 17px;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+
+    .category-image {
+      flex: 1;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      border-radius: 20px;
+
+      @media (min-width: 768px) {
+        min-height: 100%;
+        width: 40%;
+      }
+
+      .variety-count {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: #fff;
+        color: #444;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+.review-explore{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  border-radius: 12px;
+  background-color: #E999C1;
+  background-image: url('/public/images/logo.png');
+  justify-content: space-between;
+  padding: 0 50px;
+}
+.review-details{
+  max-width: 850px;
+  align-content: center;
+}
+.review-details h1{
+  color: #fff;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+.review-details button {
+  background-color: white;
+  border-radius: 20px;
+  color: #CA4D8C;
+  border: 2px solid #CA4D8C;
+  padding: 10px 30px;
+  font-size: 17px;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  margin-top: 12px;
+}
+.review-details p{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+

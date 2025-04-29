@@ -1,0 +1,7 @@
+<div class="memory-grid">
+  <img *ngFor="let img of visibleMemories" [src]="img" alt="Memory image" class="memory-img" />
+</div>
+
+<div class="view-more-wrapper" *ngIf="!allLoaded">
+  <button class="view-more-btn" (click)="viewMore()">View More</button>
+</div>

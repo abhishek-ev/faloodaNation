@@ -1,0 +1,110 @@
+
+  nav {
+    background-color: #fce8f0;
+    background-image: url("/src/common/images/navBackground.png");
+    background-size: cover;
+    background-position: cover;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    color: #2C2C2C;
+    font-size: 18px;
+    padding: 7px 13px;
+    line-height: 42px;
+    
+  }
+  
+  nav ul li a:hover {
+    font-size: 14px ;
+    transition: ease-in 0.3s;
+    
+
+  }
+  
+  nav ul li button {
+    background-color: white;
+    border-radius: 20px;
+    color: #CA4D8C;
+    border: 2px solid #CA4D8C;
+    padding: 10px 30px;
+    font-size: 17px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+  }
+  
+  .nav-details {
+    margin-top: auto;
+    margin-left: 8%;
+    padding-bottom: 10%;
+  }
+  
+  .nav-details h1 {
+    color: #000;
+    font-size: 75px;
+    font-weight:900;
+  }
+  
+  .highlight {
+    color: #CA4D8C;
+  }
+  
+  .nav-details p {
+    color: #2C2C2C;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      background-color: #fce8f0;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s ease-in;
+    }
+  
+    nav ul.active {
+      max-height: 600px;
+      padding: 10px 0;
+    }
+  
+    nav ul li {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }

@@ -1,0 +1,14 @@
+<div class="reviews-list">
+    <div class="review-card" *ngFor="let review of reviews">
+      <p>"{{ review.message }}"</p>
+      <strong>- {{ review.name }}</strong>
+    </div>
+  </div>
+  
+  <!-- Review Form -->
+  <form class="review-form">
+    <input type="text" placeholder="Name" required />
+    <input type="email" placeholder="Email" required />
+    <textarea rows="4" placeholder="Your Experience" required></textarea>
+    <button type="submit">Submit</button>
+  </form>

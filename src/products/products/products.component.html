@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="products-cards">
+  <div class="product-card" *ngFor="let category of faloodaCategories">
+    <div class="category-details">
+      <h3 class="category-name">{{ category.title }}</h3>
+      <p class="category-subtitle">
+        <span class="arrow">➜</span>
+        <strong>{{ category.subtitle }}</strong>
+      </p>
+      <ul class="category-list">
+        <li *ngFor="let item of category.items">{{ item }}</li>
+      </ul>
+    </div>
+    <div class="category-image" [style.backgroundImage]="'url(' + category.imageUrl + ')'">
+      <button class="variety-count">{{ category.varieties }} Varieties</button>
+    </div>
+  </div>
+
+  <div class="review-explore">
+    <div class="review-details">
+      <h1>Hear from Our Delighted Customers</h1>
+      <p>Experience the joy through their words and see why Falooda Nation is loved by all.</p>
+      <button class="review-explore-btn">Explore</button>
+    </div>
+    
+      <img src="images/Group 1000001347.png" alt="">
+   
+  </div>
+</div>
+<app-footer></app-footer>
