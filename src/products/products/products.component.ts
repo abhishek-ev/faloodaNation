@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../../common/navbar/navbar.component';
 import { FooterComponent } from '../../common/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule,NavbarComponent,FooterComponent],
+  imports: [CommonModule,NavbarComponent,FooterComponent,FontAwesomeModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

@@ -1,14 +1,14 @@
 <nav>
   <div class="nav-container">
     <img src="images/logo.png" alt="falooda" class="logo" />
-    <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+    <div class="menu-toggle" (click)="toggleMenu()"><fa-icon [icon]="faBars"></fa-icon></div>
     <ul [class.active]="menuOpen">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Products</a></li>
       <li><a href="#">Offers</a></li>
       <li><a href="#">Gallery</a></li>
-      <li><button>Contact</button></li>
+      <li><button><fa-icon [icon]="faPhone"></fa-icon> Contact</button></li>
     </ul>
   </div>
   <div class="nav-details">

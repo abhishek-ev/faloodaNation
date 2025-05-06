@@ -1,10 +1,9 @@
 
   nav {
     background-color: #fce8f0;
-    background-image: url("/src/common/images/navBackground.png");
-    background-size: cover;
-    background-position: cover;
-    width: 100%;
+    background-image: url('../images/NavBackground.png');
+    background-size:cover;
+    background-position: center;
     height: 550px;
     display: flex;
     flex-direction: column;
@@ -14,43 +13,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 25px 40px;
   }
   
   .logo {
-    height: 60px;
+    height: 70px;
   }
   
   nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 30px;
   }
   
   nav ul li a {
     color: #2C2C2C;
     font-size: 18px;
     padding: 7px 13px;
-    line-height: 42px;
-    
+    line-height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
   }
-  
   nav ul li a:hover {
-    font-size: 14px ;
-    transition: ease-in 0.3s;
-    
-
+    font-weight: bold;
   }
-  
+
   nav ul li button {
     background-color: white;
-    border-radius: 20px;
+    border-radius: 999px;
     color: #CA4D8C;
-    border: 2px solid #CA4D8C;
-    padding: 10px 30px;
-    font-size: 17px;
+    border: 1px solid #CA4D8C;
+    padding: 15px 30px;
+    font-size: 18px;
     cursor: pointer;
-    letter-spacing: 0.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
   }
   
   .nav-details {
@@ -60,19 +57,24 @@
   }
   
   .nav-details h1 {
-    color: #000;
+    color: #2C2C2C;
+    font-family: "Phudu", sans-serif;
     font-size: 75px;
-    font-weight:900;
+    font-weight:bold;
   }
   
   .highlight {
     color: #CA4D8C;
+    font-size: 75px;
+    font-weight:bold;
+    font-family: "Phudu", sans-serif;
   }
   
   .nav-details p {
-    color: #2C2C2C;
+    color: #5f5e5e;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .menu-toggle {
@@ -107,4 +109,27 @@
       text-align: center;
       margin: 10px 0;
     }
+  }
+
+  nav ul li {
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #CA4D8C;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  nav ul li a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(4px);
   }
