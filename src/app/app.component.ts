@@ -7,7 +7,7 @@ import { GalleryComponent } from '../gallery/gallery.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProductsComponent , FooterComponent,GalleryComponent],
+  imports: [RouterOutlet, ProductsComponent , FooterComponent,GalleryComponent,NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
