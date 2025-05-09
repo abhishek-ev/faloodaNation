@@ -11,7 +11,8 @@
         <li *ngFor="let item of category.items">{{ item }}</li>
       </ul>
     </div>
-    <div class="category-image" [style.backgroundImage]="'url(' + category.imageUrl + ')'">
+    <div class="category-image">
+      <img [src]="category.imageUrl" [alt]="category.title + ' image'" />
       <button class="variety-count">{{ category.varieties }} Varieties</button>
     </div>
   </div>
@@ -19,12 +20,11 @@
   <div class="review-explore">
     <div class="review-details">
       <h1>Hear from Our Delighted Customers</h1>
-      <p>Experience the joy through their words and see why Falooda Nation is loved by all.</p>
-      <button class="review-explore-btn">Explore</button>
+      <p class="review-paragraph">Experience the joy through their words and see why Falooda Nation is loved by all.</p>
+      <button class="review-explore-btn">
+        Explore <fa-icon [icon]="faCircleChevronRight"></fa-icon>
+      </button>
+      <img class="review-image" src="images/ProductExploreFalooda.png" alt="Falooda">
     </div>
-    
-      <img src="images/Group 1000001347.png" alt="">
-   
   </div>
-</div>
-<app-footer></app-footer>
+  <app-footer></app-footer>

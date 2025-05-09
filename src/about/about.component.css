@@ -1,0 +1,164 @@
+body {
+    line-height: 1.6;
+  }
+  
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Section 1 - Our Story */
+  .section-story {
+    background-color: #139186;
+    color: white;
+  }
+  
+  .story-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  
+  .story-text {
+    flex: 1;
+  }
+  
+  .story-text .subheading {
+    color: #FCE8F0;
+    margin-bottom: 0.7rem;
+    font-size: 16px;
+  }
+  
+  .story-text .heading {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #FCE8F0;
+    font-family: 'Phudu', sans-serif;
+  }
+  .story-text .storypara {
+    font-size: 20px;
+    color: #FCE8F0;
+    opacity: 0.7;
+  }
+  
+  .story-image img {
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Section 2 - Today */
+  .section-today {
+    background-color: #fff;
+    color: #2C2C2C;
+  }
+  
+  .section-today .subheading.pink {
+    color: #CA4D8C;
+    font-size: 16px;
+  }
+  
+  .section-today .heading {
+    font-size: 40px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: #2C2C2C;
+    font-weight: bold;
+    font-family: 'Phudu', sans-serif;
+  }
+  
+  .description {
+    max-width: 700px;
+    margin: 0 0 2rem;
+    font-size: 20px;
+    opacity: 0.7;
+  }
+  
+  .today-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .today-text {
+    flex: 1;
+  }
+  
+  .today-image img {
+    max-width: 100%;
+  }
+  
+  .block {
+    margin-bottom: 2rem;
+  }
+  
+  .highlight {
+    color: #CA4D8C;
+    font-weight: bold;
+    font-family: 'Phudu', sans-serif;
+    font-size: 25px;
+    margin-bottom: 0.5rem;
+  }
+  .highlight-para{
+    font-size: 20px;
+    opacity: 0.7;
+  }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .story-container, .today-grid {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-left {
+    animation: fadeInLeft 3s ease forwards;
+  }
+  
+  .fade-in-right {
+    animation: fadeInRight 3s ease forwards;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 3s ease forwards;
+  }

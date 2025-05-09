@@ -2,6 +2,7 @@ footer .container {
     background-image: url(../images/FooterBG.png);
     background-size: cover;
     background-position: 100% 100%;
+    overflow: hidden;
 }
 
 .row {
@@ -65,13 +66,13 @@ footer .container {
     font-size: 20px;
     margin: 0 15px;
     transition: 0.5s;
-    background-color: rgb(255, 255, 255);
-    padding: 9px;
+    background-color:#fff;
+    padding: 9px 10px;
     border-radius: 100%;  
 }
 
 .row-footer .socialIcons i:hover {
-    color: #2C2C2C;
+    color: #72bcb6;
 }
 
 @media(max-width:700px) {
@@ -106,8 +107,29 @@ footer .container {
     }
     
 }
-@media(max-width:1000px){
-    .footer-col {
-         margin-left: 10px;
+@media(max-width:1100px){
+    .footer-col img {
+        height: 50px;
+    }
+    .footer-col ul li p {
+        font-size: 15px;
+    }
+    .col p {
+        font-size: 15px;
+    }
+    .footer-col h4{
+        font-size: 19px;   
+    }
+    .row {
+        padding: 40px 40px;
+    }
+    .row-footer{
+        padding: 25px 40px;
+    }
+    .footer-col{
+        margin-left: 18px;
+    }
+    .footer-para{
+        width: 300px;
     }
 }

@@ -1,6 +1,6 @@
 nav {
   background-color: #fce8f0;
-  background-image: url('../images/NavBackground.png');
+  background-image: url('../images/NavbarBackground.png');
   background-size: cover;
   background-position: center;
   height: 550px;
@@ -81,7 +81,7 @@ nav ul li button {
 .nav-image img{
   position: absolute;
   bottom: 0;
-  right: 8rem;
+  right: 0;
   max-width: 100%;
   overflow: hidden;
   height: 70%;
@@ -129,7 +129,6 @@ nav ul li button {
   }
 
   .nav-image img {
-   opacity: 90%;
    max-height: 65%;
   }
 }
@@ -161,6 +160,7 @@ nav ul li a:hover::after {
 @media (max-width: 500px) {
   .nav-image img {
     display: none;
+    opacity: 80%;
   }
 }
 @media (max-width: 1400px) {

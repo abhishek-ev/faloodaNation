@@ -4,47 +4,58 @@
   gap: 2rem;
   padding: 3rem;
 
-  @media (min-width: 768px) {
-    .product-card {
-      flex-direction: row;
-    }
+  @media (max-width: 768px) {
+    padding: 2rem;
   }
 
   .product-card {
     display: flex;
+    flex-direction: column;
     background-color: #e4f4f3;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
     @media (min-width: 768px) {
       flex-direction: row;
-      justify-content: space-between;
       align-items: stretch;
     }
 
     .category-details {
       flex: 1;
-      padding: 4rem;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
 
       .category-name {
         text-transform: uppercase;
         color: #139186;
-        font-weight: 800;
+        font-weight: bold;
         margin-bottom: 0.7rem;
-        font-size: 2rem;
+        font-size: 40px;
+        font-family: 'Phudu', sans-serif;
+
+        @media (min-width: 768px) {
+          padding: 2rem 0 0 0;
+        }
       }
 
       .category-subtitle {
-        font-weight: 600;
+        font-weight: bold;
         margin-bottom: 1.2rem;
-        color: #333;
-        font-size: 18px;
-
+        color: #2C2C2C;
+        font-size: 20px;
 
         .arrow {
-          color: #00b3b3;
+          color: #139186;
           margin-right: 4px;
         }
       }
@@ -53,28 +64,48 @@
         list-style: none;
         padding-left: 0;
         margin: 0;
+        flex-grow: 1;
+        overflow-y: auto;
+        max-height: 250px;
+        padding-right: 0.5rem;
+        scroll-behavior: smooth;
 
         li {
-          margin-bottom: 0.5rem;
-          color: #444;
-          text-transform: capitalize;
-          font-size: 17px;
+          color: #2C2C2C;
+          font-size: 20px;
           margin-bottom: 0.8rem;
+          opacity: 70%;
         }
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #139186;
+          border-radius: 6px;
+        }
+
       }
+
     }
 
     .category-image {
       flex: 1;
       position: relative;
-      background-size: cover;
-      background-position: center;
-      min-height: 300px;
-      border-radius: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+      display: flex;
 
-      @media (min-width: 768px) {
-        min-height: 100%;
-        width: 40%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      &:hover {
+        transform: scale(1.03);
       }
 
       .variety-count {
@@ -82,55 +113,197 @@
         top: 1rem;
         right: 1rem;
         background-color: #fff;
-        color: #444;
-        font-weight: bold;
+        color: #2C2C2C;
         padding: 0.5rem 1rem;
         border-radius: 50px;
-        border: 1px solid #ccc;
-        font-size: 0.9rem;
+        border: 1px solid #CA4D8C;
+        font-size: 16px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       }
     }
   }
 }
-.review-explore{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  min-height: 300px;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .category-list {
+    max-height: 180px;
+  }
+}
+
+
+.review-explore {
   border-radius: 12px;
   background-color: #E999C1;
-  background-image: url('/public/images/logo.png');
-  justify-content: space-between;
-  padding: 0 50px;
-}
-.review-details{
-  max-width: 850px;
+  background-image: url('../../common/images/ProductExploreCard.png');
+  background-size: cover;
+  background-position: right bottom;
+  justify-content: space-around;
+  padding: 50px;
+  position: relative;
   align-content: center;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-in-out;
 }
-.review-details h1{
+
+.review-details {
+  max-width: 850px;
+}
+
+.review-details h1 {
   color: #fff;
-  font-size: 70px;
+  font-size: 60px;
   text-transform: uppercase;
+  font-family: 'Phudu', sans-serif;
+  font-weight: bold;
 }
-.review-details button {
-  background-color: white;
-  border-radius: 20px;
-  color: #CA4D8C;
-  border: 2px solid #CA4D8C;
-  padding: 10px 30px;
-  font-size: 17px;
+
+.review-explore-btn {
+  background-color: #CA4D8C;
+  border-radius: 999px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  letter-spacing: 0.1rem;
-  margin-top: 12px;
+  letter-spacing: 0.05rem;
+  margin-top: 18px;
 }
-.review-details p{
+
+.review-explore-btn:hover {
+  transform: translateY(3px);
+  background-color: #b03b76;
+}
+
+.review-details p {
   color: #fff;
   font-size: 20px;
   margin-top: 10px;
+  opacity: 70%;
 }
 
+.review-explore img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+}
+
+.review-explore img {
+  height: 90%;
+  animation: bounceIn 1s ease;
+}
+
+.review-paragraph {
+  width: 500px;
+}
+
+@media (max-width :950px) {
+
+  .review-details p {
+    font-size: 13px;
+  }
+
+  .review-explore img {
+    height: 80%;
+  }
+
+  .review-details {
+    max-width: 450px;
+  }
+
+  .review-explore {
+    padding: 25px;
+  }
+
+  .review-paragraph {
+    max-width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    .review-details h1 {
+      font-size: 40px;
+    }
+
+    .review-details p {
+      font-size: 12px;
+    }
+
+    .review-explore img {
+      height: 85%;
+      animation: bounceIn 1s ease;
+    }
+
+    .review-paragraph {
+      max-width: 200px;
+    }
+
+    .review-explore-btn {
+      padding: 10px 25px;
+      font-size: 14px;
+    }
+
+  }
+
+  @media (max-width: 500px) {
+    .review-details h1 {
+      font-size: 30px;
+    }
+
+    .review-details p {
+      font-size: 12px;
+    }
+
+    .review-explore img {
+      height: 40%;
+      animation: bounceIn 1s ease;
+    }
+
+    .review-explore-btn {
+      padding: 10px 25px;
+      font-size: 14px;
+    }
+
+  }
 
 
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    60% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
