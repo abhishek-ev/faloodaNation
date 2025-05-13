@@ -117,6 +117,12 @@ body {
     }
   }
   
+  @media (max-width: 1100px) {
+    .story-image img {
+      max-width: 100%;
+    }
+  }
+  
   /* Animations */
   @keyframes fadeInLeft {
     from {

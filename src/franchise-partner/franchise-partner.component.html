@@ -1,0 +1,48 @@
+<div class="franchise" id="franchise">
+<div class="franchise-form-section">
+    <div class="form-content">
+      <h2>Become a Franchise Partner</h2>
+      <p>Fill out the form to start your journey with Falooda Nation</p>
+      <form >
+        <input type="text" placeholder="Name" name="name" required>
+        <input type="tel" placeholder="Phone No." name="phone" required>
+        <input type="email" placeholder="Email" name="email" required>
+        <textarea placeholder="Message" name="message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  
+    <div class="map-section">
+      <iframe 
+        [src]="selectedLocation"
+        width="100%" 
+        height="250" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+      <h2 class="social-icons-heading">Connect with us</h2>
+      <div class="social-icons">
+        <a [href]="socialLink.youtube" target="_blank"><i class="fab fa-youtube"><fa-icon [icon]="faYoutube"></fa-icon></i></a>
+        <a [href]="socialLink.instagram" target="_blank"><i class="fab fa-instagram"><fa-icon [icon]="faInstagram"></fa-icon></i></a>
+        <a [href]="socialLink.facebook" target="_blank"><i class="fab fa-facebook"><fa-icon [icon]="faFacebook"></fa-icon></i></a>
+        <a [href]="socialLink.linkedin" target="_blank"><i class="fab fa-linkedin"><fa-icon [icon]="faLinkedin"></fa-icon></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <section class="branches-section">
+    <h2>Our Branches</h2>
+    <div class="branch-grid">
+      <div 
+        class="branch-card" 
+        *ngFor="let branch of branches" 
+        (click)="setLocation(branch.location)">
+        <fa-icon class="location-icon" [icon]="faLocationDot"></fa-icon>
+        <h3>{{ branch.location }}</h3>
+        <ul>
+          <li *ngFor="let b of branch.branches">{{ b }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

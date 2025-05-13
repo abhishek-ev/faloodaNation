@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="container">
     <!-- Buttons -->
     <div class="button-group">
       <button [ngClass]="{ active: activeTab === 'memories' }" (click)="setTab('memories')">
@@ -17,5 +17,7 @@
       <app-memories-section *ngIf="activeTab === 'memories'"></app-memories-section>
       <app-videos-section *ngIf="activeTab === 'videos'"></app-videos-section>
       <app-reviews-section *ngIf="activeTab === 'reviews'"></app-reviews-section>
-    </div>
+    </div> 
   </div>
+
+  <app-contact-card></app-contact-card>
