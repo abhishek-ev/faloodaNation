@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reviews-section',
   templateUrl: './reviews-section.component.html',
   styleUrls: ['./reviews-section.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, FormsModule]
 })
 export class ReviewsComponent {
+  placeName: string = '';
+
   allReviews: { name: string; message: string }[] = [];
   visibleReviews: { name: string; message: string }[] = [];
   loadCount = 6;
@@ -38,4 +41,15 @@ export class ReviewsComponent {
   get allLoaded() {
     return this.visibleReviews.length >= this.allReviews.length;
   }
+
+  redirectToGoogleReview() {
+    const place = this.placeName.trim();
+    if (place) {
+      const query = encodeURIComponent(`Falooda Nation ${place} Reviews`);
+      const mapsSearchUrl = `https://www.google.com/maps/search/${query}`;
+      window.open(mapsSearchUrl, '_blank');
+    } else {
+      alert('Please enter a place name.');
+    }
+  } 
 }

@@ -12,8 +12,8 @@
     <div class="card">
       <h1 class="title">Share Your Magical Falooda Experience</h1>
       <p class="subtitle">We’d love to hear about your moments of joy with Falooda Nation. Leave your review and spread the magic!</p>
-      <input class="input-place" type="text" placeholder="Place Name" required />
-      <button class="btn">Give the Review</button>
+      <input class="input-place" type="text" [(ngModel)]="placeName" placeholder="Place Name" required />
+      <button class="btn" (click)="redirectToGoogleReview()">Give the Review</button>
     </div>
     <div class="blob"></div>
   </div>

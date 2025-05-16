@@ -1,0 +1,27 @@
+<nav>
+    <div class="nav-container">
+        <img class="logo" src="images/FaloodaNationLogo.png" alt="faloodanation-logo" />
+        <div class="menu-toggle" (click)="toggleMenu()"><fa-icon [icon]="faBars"></fa-icon></div>
+        <ul [class.active]="menuOpen">
+            <li><a routerLink="aboutUs">Home</a></li>
+            <li><a routerLink="aboutUs">About</a></li>
+            <li><a routerLink="ourProducts">Products</a></li>
+            <li><a routerLink="offers">Offers</a></li>
+            <li><a routerLink="gallery">Gallery</a></li>
+            <li><button routerLink="contactUs"><fa-icon [icon]="faPhone"></fa-icon> Contact</button></li>
+        </ul>
+    </div>
+    <div class="second">
+        <div class="nav-details">
+            <img class="nav-ellips" src="images/home-nav-ellipse.png" alt="">
+            <h1>Discover the <img class="heading-png" src="images/home-navGroupsm.png" alt="">
+                Magic of <span class="highlight">Falooda </span></h1>
+            <p>From Persia to India, reinvented for the world. Explore over 35 varieties of Faloodas, crafted with
+                passion and precision.</p>
+            <button class="review-explore-btn">Explore <fa-icon [icon]="faCircleChevronRight"></fa-icon></button>
+        </div>
+        <div class="nav-image">
+            <img src="images/home-nav-fa.png" alt="falooda">
+        </div>
+    </div>
+</nav>

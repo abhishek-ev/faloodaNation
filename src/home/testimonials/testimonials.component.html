@@ -1,0 +1,16 @@
+<section class="testimonial-section">
+    <p class="subtitle">What Our Customers Say!</p>
+    <h2 class="title">LOVED BY FOOD ENTHUSIASTS <br />EVERYWHERE!</h2>
+  
+    <div class="slider-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+      <div class="slider" [style.transform]="'translateX(-' + scrollPosition + 'px)'">
+        <!-- Duplicate testimonials array twice for seamless looping -->
+        <div class="card" *ngFor="let t of testimonials.concat(testimonials)">
+          <div class="quote">❝</div>
+          <p>{{ t.text }}</p>
+          <strong>- {{ t.author }}</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+  

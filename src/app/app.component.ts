@@ -8,10 +8,16 @@ import { AboutComponent } from '../about/about.component';
 import { ContactCardComponent } from '../common/contact-card/contact-card.component';
 import { FranchisePartnerComponent } from '../franchise-partner/franchise-partner.component';
 import { CommonModule } from '@angular/common';
+import { AboutCardComponent } from "../home/about-card/about-card.component";
+import { ProductShowcaseComponent } from "../home/product-showcase/product-showcase.component";
+import { OffersComponent } from "../home/offers/offers.component";
+import { HomeNavComponent } from "../home/home-nav/home-nav.component";
+import { TestimonialsComponent } from "../home/testimonials/testimonials.component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProductsComponent , FooterComponent,GalleryComponent,NavbarComponent,AboutComponent,ContactCardComponent,FranchisePartnerComponent,CommonModule],
+  imports: [RouterOutlet, ProductsComponent, FooterComponent, GalleryComponent, NavbarComponent, AboutComponent, ContactCardComponent, FranchisePartnerComponent, CommonModule, AboutCardComponent, ProductShowcaseComponent, OffersComponent, HomeNavComponent, TestimonialsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

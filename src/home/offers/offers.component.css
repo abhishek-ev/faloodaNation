@@ -1,0 +1,238 @@
+.offers-section {
+  padding: 3rem 4rem;
+
+  .section-label {
+    color: #CA4E8D;
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0.5rem 0 2rem;
+    color: #2C2C2C;
+    font-family: 'Phudu', sans-serif;
+  }
+
+  .offers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .offer-card {
+      background: #fff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: 500px;
+        display: block;
+      }
+
+      &:hover {
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  .image-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .popup-content {
+      position: relative;
+      max-width: 90%;
+      height: 90%;
+
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #fff;
+        color: #000;
+        font-size: 24px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .offers-section {
+    padding: 2rem;
+  }
+}
+
+
+
+  
+.why-us-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 4rem;
+  background: #139186;
+  align-items: center;
+  overflow: hidden;
+
+  .why-us-text {
+    flex: 1 1 50%;
+    z-index: 2;
+
+    .subtitle {
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+      color: #FCE8F0;
+    }
+
+    .main-title {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #FCE8F0;
+      font-family: 'Phudu', sans-serif;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+
+      .card {
+        background: #fff;
+        color: #CA4D8C;
+        font-size: 24px;
+        padding: 40px 30px;
+        border-radius: 10px;
+        text-align: left;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: slideUp 0.6s ease-in-out forwards;
+        opacity: 0;
+
+        .icon {
+          width: 68px;
+          height: 68px;
+          margin-bottom: 1rem;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .card:nth-child(1) { animation-delay: 0.2s; }
+      .card:nth-child(2) { animation-delay: 0.4s; }
+      .card:nth-child(3) { animation-delay: 0.6s; }
+      .card:nth-child(4) { animation-delay: 0.8s; }
+    }
+  }
+
+  .juice-img {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+
+    img {
+      height: 100%;
+      max-height: 90%;
+      margin-top: 80px;
+      width: auto;
+      animation: fadeInScale 1.8s ease-in-out forwards;
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .why-us-text, .juice-img {
+      flex: 1 1 100%;
+    }
+
+    .juice-img {
+      order: 2;
+      margin-top: 2rem;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 0px;
+      }
+    }
+    .why-us-section {
+        padding: 2rem;
+      }
+
+    .cards {
+      grid-template-columns: 1fr;
+
+      .card{
+        padding: 30px;
+      }
+    }
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+  

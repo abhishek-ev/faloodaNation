@@ -1,0 +1,98 @@
+.testimonial-section {
+    padding: 40px 20px;
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .subtitle {
+    color: #CA4E8D;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-bottom: 40px;
+    text-decoration-color: #2C2C2C;
+    font-family: 'Phudu', sans-serif;
+  }
+  
+  .slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  
+  .slider {
+    display: inline-flex;
+    gap: 40px;
+    transition: transform 0.1s linear;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    background-color: #eaf6f5;
+    border-radius: 12px;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 248px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    user-select: none;
+    min-width: 300px;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .card .quote {
+    font-size: 70px;
+    color: #139186;
+  }
+  
+  .card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2C2C2C;
+    opacity: 0.5;
+  }
+  
+  .card strong {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2C2C2C;
+  }
+  
+  @media (max-width: 640px) {
+    .testimonial-section {
+      max-width: 100%;
+    }
+  
+    .card {
+      height: auto;
+      padding: 20px;
+      width: 200px;
+    }
+  
+    .title {
+      font-size: 50px;
+    }
+    .card .quote {
+        font-size: 50px;
+        color: #139186;
+      }
+      
+      .card p {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+  }
+  

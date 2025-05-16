@@ -80,6 +80,11 @@
   border: 1px solid #ffffff;
   border-radius: 8px;
   width: 100%;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #CA4D8C;
+  }
 }
 
 .btn {
@@ -153,5 +158,30 @@
 @media only screen and (max-width: 400px) {
   .card {
     max-width: 300px;
+  }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(#f87da2 1.2px, transparent 1.2px),
+    radial-gradient(#fef08a 1.2px, transparent 1.2px),
+    radial-gradient(#a5f3fc 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+  animation: sprinkleMove 40s linear infinite;
+  z-index: 1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+@keyframes sprinkleMove {
+  0% {
+    background-position: 0 0, 10px 10px, 20px 20px;
+  }
+  100% {
+    background-position: 1000px 1000px, 1010px 1010px, 1020px 1020px;
   }
 }

@@ -1,0 +1,25 @@
+<section class="showcase-section" [@fadeInStagger]>
+    <div class="section-header">
+      <p class="label">Our Products</p>
+      <h2 class="title">OUR SIGNATURE FALOODAS & MORE</h2>
+      <p class="subtitle">Over 35 Varieties Across Eight Categories</p>
+    </div>
+  
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of products" (click)="onViewAllClick()">
+        <div class="badge">{{ product.varieties }} Varieties</div>
+        <img [src]="product.image" [alt]="product.title" />
+        <div class="card-footer">
+          <h3>{{ product.title }}</h3>
+          <button class="action-btn" (click)="onViewAllClick()">
+            <fa-icon [icon]="faCircleChevronRight"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="cta">
+      <button class="see-all-btn" (click)="onViewAllClick()">See All <fa-icon [icon]="faCircleChevronRight"></fa-icon></button>
+    </div>
+  </section>
+  

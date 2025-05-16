@@ -7,13 +7,16 @@
     border-radius: 12px;
     background: linear-gradient(to right, #d96498, #e999c1);
     position: relative;
-    padding: 70px;
+    padding: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     overflow: hidden;
     animation: fadeInUp 2s ease-in-out;
+    background-image:url('../images/ProductExploreCard.png') ;
+    background-position: center;
+    background-size: cover;
   }
   
   .review-details {
@@ -39,20 +42,20 @@
   .strawberry,
   .blueberry {
     position: absolute;
-    width: 50px;
+    width: 100px;
     height: auto;
     animation: float 3s ease-in-out infinite;
   }
   
   .strawberry {
-    top: -20px;
+    top: -55px;
     left: -20px;
   }
   
   .blueberry {
-    top: -20px;
-    right: -20px;
-    display: none;
+    top: -55px;
+    right: 150px;
+    /* display: none; */
   }
   
   .review-paragraph {
@@ -96,7 +99,7 @@
     position: absolute;
     top: 0;
     right: 20px;
-    height: 30%;
+    height: 35%;
     z-index: 0;
     animation: float 3s ease-in-out infinite;
   }
@@ -140,11 +143,18 @@
   }
   
   /* Responsive Design */
+  @media (max-width: 1100px) {
+    .review-explore {
+      padding: 60px 40px;
+    }
+  }
+
   @media (max-width: 950px) {
     .review-explore {
       flex-direction: column;
       padding: 30px;
       text-align: center;
+      padding: 70px;
     }
   
     .review-details h1 {

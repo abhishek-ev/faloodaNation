@@ -1,0 +1,38 @@
+<section class="offers-section">
+  <p class="section-label">New Offers</p>
+  <h2 class="section-title">Irresistible Falooda Offers Await!</h2>
+
+  <div class="offers-container">
+    <div class="offer-card" *ngFor="let offer of offers" (click)="openPopup(offer.image)">
+      <img [src]="offer.image" alt="Offer" />
+    </div>
+  </div>
+
+  <!-- Popup overlay -->
+  <div class="image-popup" *ngIf="popupImage" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <span class="close-btn" (click)="closePopup()">×</span>
+      <img [src]="popupImage" alt="Full Size Image" />
+    </div>
+  </div>
+</section>
+
+
+  
+<section class="why-us-section">
+  <div class="why-us-text">
+    <h6 class="subtitle">Why Choose Us</h6>
+    <h2 class="main-title">WHY FALOODA NATION STANDS OUT!</h2>
+    <div class="cards">
+      <div class="card" *ngFor="let card of whyUsCards">
+        <div class="icon">
+          <img [src]="card.icon" alt="icon" />
+        </div>
+        <p>{{ card.title }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="juice-img">
+    <img src="images/falooda-whyus.png" alt="Juice Image" class="fade-in" />
+  </div>
+</section>
