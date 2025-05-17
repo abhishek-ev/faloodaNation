@@ -22,9 +22,9 @@ closePopup() {
 }
 
   offers = [
-    { image: 'https://img.freepik.com/free-photo/strawberry-milkshake-with-ice-table_140725-5486.jpg?ga=GA1.1.2131745765.1747425652&semt=ais_hybrid&w=740'},
-    { image: 'https://img.freepik.com/free-photo/vanilla-strawberry-icecream-with-cinnamon-powder-glass-cup_114579-13182.jpg?ga=GA1.1.2131745765.1747425652&semt=ais_hybrid&w=740' },
-    { image: 'https://img.freepik.com/free-photo/front-view-dessert-glass-with-straw_23-2148603256.jpg?ga=GA1.1.2131745765.1747425652&semt=ais_hybrid&w=740' },
+    { image: 'images/offers.png'},
+    { image: 'images/offers.png' },
+    { image: 'images/offers.png' },
   ];
 
   whyUsCards = [

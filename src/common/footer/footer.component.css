@@ -1,5 +1,5 @@
 footer .container {
-    background-image: url(../images/FooterBG.png);
+    background-image: url('../images/FooterBG.png');
     background-size: cover;
     background-position: 100% 100%;
     overflow: hidden;
@@ -125,6 +125,8 @@ footer .container {
     }
     .row-footer{
         padding: 25px 40px;
+        align-items: center; 
+        text-align: center;
     }
     .footer-col{
         margin-left: 18px;
@@ -132,4 +134,23 @@ footer .container {
     .footer-para{
         width: 300px;
     }
+}
+@media(max-width:350px) {
+
+    .row-footer .socialIcons i{
+        margin-top: 12px;
+    }
+    .row-footer{
+        flex-direction: column;
+        padding: 30px 20px;
+        align-items: center; 
+        text-align: center;
+    }
+    .footer-col ul li p {
+     display: none;
+    }
+    .row-footer .socialIcons i {
+        margin-top: 20px;  
+    }
+    
 }

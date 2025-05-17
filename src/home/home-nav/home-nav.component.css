@@ -290,5 +290,13 @@ nav {
         padding: 12px 26px;
         font-size: 16px;
       }
+      .nav-container{
+        padding: 25px 40px;
+      }
+  }
+  @media(max-width : 360px){
+    .nav-details{
+      margin-top: 50px;
+    }
   }
   

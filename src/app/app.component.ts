@@ -13,11 +13,12 @@ import { ProductShowcaseComponent } from "../home/product-showcase/product-showc
 import { OffersComponent } from "../home/offers/offers.component";
 import { HomeNavComponent } from "../home/home-nav/home-nav.component";
 import { TestimonialsComponent } from "../home/testimonials/testimonials.component";
+import { HomeComponent } from "../home/home/home.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProductsComponent, FooterComponent, GalleryComponent, NavbarComponent, AboutComponent, ContactCardComponent, FranchisePartnerComponent, CommonModule, AboutCardComponent, ProductShowcaseComponent, OffersComponent, HomeNavComponent, TestimonialsComponent],
+  imports: [RouterOutlet, ProductsComponent, FooterComponent, GalleryComponent, NavbarComponent, AboutComponent, ContactCardComponent, FranchisePartnerComponent, CommonModule, AboutCardComponent, ProductShowcaseComponent, OffersComponent, HomeNavComponent, TestimonialsComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
