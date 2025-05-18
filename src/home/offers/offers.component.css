@@ -100,7 +100,6 @@
 }
 
 
-
   
 .why-us-section {
   position: relative;
@@ -132,7 +131,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
 
       .card {
@@ -180,7 +179,7 @@
     z-index: 1;
 
     img {
-      height: 100%;
+      height: auto;
       max-height: 90%;
       margin-top: 80px;
       width: auto;
@@ -199,25 +198,16 @@
       }
   
       .juice-img {
-        order: 2;
+        order: none;
         margin-top: 2rem;
         justify-content: center;
-  
-        img {
-          max-width: 100%;
-          height: auto;
-          margin-top: 0px;
-        }
       }
   
       .cards {
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
   
         .card {
-          flex: 0 1 280px;
           padding: 30px;
         }
       }
@@ -247,4 +237,18 @@
   }
 }
 
-  
+@media (max-width: 650px) {
+  img {
+    max-width: 120%;
+    height: 90%;
+  }
+  .why-us-section
+   .why-us-text .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+.why-us-section {
+  flex-direction: column;
+}
+}
