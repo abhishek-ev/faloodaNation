@@ -25,6 +25,7 @@ body {
   
   .story-text {
     flex: 1;
+    min-width: 50%;
   }
   
   .story-text .subheading {
@@ -87,6 +88,7 @@ body {
   
   .today-text {
     flex: 1;
+    min-width: 50%;
   }
   
   .today-image img {
