@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink, Router, } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faPhone, faBars} from '@fortawesome/free-solid-svg-icons' 
 import { CommonModule } from '@angular/common';
 import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { RouterOutlet,RouterLinkActive } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-home-nav',
-  imports: [FontAwesomeModule, RouterLink,CommonModule],
+  imports: [FontAwesomeModule, RouterLink,CommonModule,RouterOutlet,RouterLinkActive],
   templateUrl: './home-nav.component.html',
   styleUrl: './home-nav.component.css'
   
@@ -24,11 +26,7 @@ export class HomeNavComponent {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
-
-  
-  gotoContacts(){
-    this.router.navigate(['/contactUs'],{fragment:'franchise'})
+  gotoOffers(){
+    this.router.navigate(['/home'],{fragment:'offers'})
   }
-
-
 }

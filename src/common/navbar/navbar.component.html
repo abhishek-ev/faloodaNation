@@ -3,12 +3,12 @@
     <img class="logo" src="images/FaloodaNationLogo.png" alt="faloodanation-logo"/>
     <div class="menu-toggle" (click)="toggleMenu()"><fa-icon [icon]="faBars"></fa-icon></div>
     <ul [class.active]="menuOpen">
-      <li><a routerLink="aboutUs">Home</a></li>
-      <li><a routerLink="aboutUs">About</a></li>
-      <li><a routerLink="ourProducts">Products</a></li>
-      <li><a routerLink="offers">Offers</a></li>
-      <li><a routerLink="gallery">Gallery</a></li>
-      <li><button routerLink="contactUs"><fa-icon [icon]="faPhone"></fa-icon> Contact</button></li>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/aboutUs">About</a></li>
+      <li><a routerLink="/ourProducts">Products</a></li>
+      <li><a (click)="gotoOffers()">Offers</a></li>
+      <li><a routerLink="/gallery">Gallery</a></li>
+      <li><button routerLink="/contactUs"><fa-icon [icon]="faPhone"></fa-icon> Contact</button></li>
     </ul>
   </div>
   <div class="nav-details">

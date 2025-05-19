@@ -11,32 +11,32 @@
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
+                    <li><a routerLink="/home">Home</a></li>
+                    <li><a routerLink="/aboutUs">About Us</a></li>
+                    <li><a routerLink="/ourProducts">Products</a></li>
                 </ul>
             </div>
             <!--3nd column--->
             <div class="footer-col">
                 <h4>Business</h4>
                 <ul>
-                    <li><a href="">Franchisee</a></li>
-                    <li><a href="">Gallery</a></li>
+                    <li><a routerLink="/contactUs">Franchisee</a></li>
+                    <li><a routerLink="/gallery" >Gallery</a></li>
                 </ul>
             </div>
             <!--4nd column--->
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="">Review</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a (click)="gotoReviews()">Review</a></li>
+                    <li><a routerLink="/contactUs">Contact Us</a></li>
                 </ul>
             </div>
         </div>
         <hr class="hr-line">
         <div class="row-footer">
             <div class="col">
-                <p>&#169; 2024 Faloodanation. All Rights Reserved.</p>
+                <p>&#169; 2025 Faloodanation. All Rights Reserved.</p>
             </div>
             <div class="socialIcons">
                 <a [href]="socialLinks.youtube" target="_blank"><i><fa-icon [icon]="faYoutube"></fa-icon></i></a>

@@ -5,7 +5,7 @@
     <div class="slider-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
       <div class="slider" [style.transform]="'translateX(-' + scrollPosition + 'px)'">
         <!-- Duplicate testimonials array twice for seamless looping -->
-        <div class="card" *ngFor="let t of testimonials.concat(testimonials)">
+        <div class="card" *ngFor="let t of testimonials.concat(testimonials)" (click)="gotoReviews()">
           <div class="quote">❝</div>
           <p>{{ t.text }}</p>
           <strong>- {{ t.author }}</strong>

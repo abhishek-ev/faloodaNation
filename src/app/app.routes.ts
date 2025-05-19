@@ -4,12 +4,17 @@ import { AboutComponent } from '../about/about.component';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { ProductsComponent } from '../products/products/products.component';
 import { ReviewsComponent } from '../gallery/reviews-section.component';
+import { HomeComponent } from '../home/home/home.component';
 
 export const routes: Routes = [
     {
         path:'',
-        redirectTo: 'aboutUs',
+        redirectTo: 'home',
         pathMatch:'full'
+    },
+    {
+        path:'home',
+        component:HomeComponent
     },
     {
         path:'contactUs',
@@ -31,13 +36,4 @@ export const routes: Routes = [
         path:'review',
         component:ReviewsComponent
     },
-    {
-        path:'offers',
-        redirectTo: 'aboutUs'
-    }
 ];
-
-// const routerOptions: ExtraOptions = {
-//     scrollPositionRestoration: 'enabled', 
-//     anchorScrolling: 'enabled', 
-//   };

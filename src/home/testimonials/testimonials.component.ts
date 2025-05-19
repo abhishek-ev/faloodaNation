@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-testimonials',
@@ -8,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './testimonials.component.css'
 })
 export class TestimonialsComponent implements OnInit,OnDestroy {
+  constructor(private router:Router){}
   currentIndex = 0;
   isPaused = false;
   scrollPosition = 0;
@@ -52,5 +54,8 @@ export class TestimonialsComponent implements OnInit,OnDestroy {
 
   onMouseLeave() {
     this.isPaused = false;
+  }
+  gotoReviews(){
+    this.router.navigate(['/gallery'],{fragment:'reviews'})
   }
 }

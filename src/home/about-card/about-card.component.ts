@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./about-card.component.css']
 })
 export class AboutCardComponent implements AfterViewInit {
+  constructor(private route:Router){}
   faCircleChevronRight = faCircleChevronRight
 
   ngAfterViewInit() {
@@ -25,5 +26,8 @@ export class AboutCardComponent implements AfterViewInit {
     document.querySelectorAll('.animate-on-scroll').forEach(elem => {
       observer.observe(elem);
     });
+  }
+  gotoAbout(){
+     this.route.navigate(['/aboutUs'])
   }
 }
