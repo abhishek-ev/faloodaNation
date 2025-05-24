@@ -6,9 +6,9 @@
     </div>
   
     <div class="product-grid">
-      <div class="product-card" *ngFor="let product of products" (click)="onViewAllClick()">
-        <div class="badge">{{ product.varieties }} Varieties</div>
-        <img [src]="product.image" [alt]="product.title" />
+      <div class="product-card" *ngFor="let product of products | slice:0:4" (click)="onViewAllClick()">
+        <div class="badge">{{ product.items.length }} Varieties</div>
+        <img [src]="product.imageUrl" [alt]="product.title" />
         <div class="card-footer">
           <h3>{{ product.title }}</h3>
           <button class="action-btn" (click)="onViewAllClick()">

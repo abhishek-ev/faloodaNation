@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { reviews } from '../../common/constants';
 
 @Component({
   selector: 'app-testimonials',
@@ -15,14 +16,7 @@ export class TestimonialsComponent implements OnInit,OnDestroy {
   scrollPosition = 0;
   intervalId: any;
 
-  testimonials = [
-    { text: '“Falooda Nation serves the Best Falooda\'s in town! Variety of flavours, Great Ambience and moderate Price! Highly recommend!”', author: 'Zaeem Abdulla' },
-    { text: '“Loved the rose falooda, refreshing and flavorful. Definitely coming back for more!”', author: 'Zaeem Abdulla' },
-    { text: '“Every bite is a delight! The ambiance is perfect. Highly recommended!”', author: 'Zaeem Abdulla' },
-    { text: '“Affordable, tasty, and fresh desserts. This place is a hidden gem!”', author: 'Zaeem Abdulla' },
-    { text: '“Perfect place to hang out with friends. Love the variety!”', author: 'Zaeem Abdulla' },
-    { text: '“So many options! Everything tasted amazing. Will come again.”', author: 'Zaeem Abdulla' }
-  ];
+  testimonials = reviews;
 
   ngOnInit() {
     this.startAutoScroll();

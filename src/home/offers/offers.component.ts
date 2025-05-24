@@ -1,31 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { offers } from '../../common/constants';
 
 @Component({
   selector: 'app-offers',
   imports: [CommonModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css',
-  animations:[]
-  
+  animations: []
+
 })
 export class OffersComponent {
 
   popupImage: string | null = null;
 
-openPopup(imageUrl: string) {
-  this.popupImage = imageUrl;
-}
+  openPopup(imageUrl: string) {
+    this.popupImage = imageUrl;
+  }
 
-closePopup() {
-  this.popupImage = null;
-}
-
-  offers = [
-    { image: 'images/offers.png'},
-    { image: 'images/offers.png' },
-    { image: 'images/offers.png' },
-  ];
+  closePopup() {
+    this.popupImage = null;
+  }
+  offers = offers;
 
   whyUsCards = [
     { icon: 'images/icon-unique-varieties-icon.png', title: '35+ Unique Varieties' },

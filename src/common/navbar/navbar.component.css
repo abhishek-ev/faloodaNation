@@ -1,5 +1,5 @@
 nav {
-  background-color: #fce8f0;
+  background-color: #f9d3e1;
   background-image: url('../images/NavbarBackground.png');
   background-size: cover;
   background-position: center;
@@ -13,7 +13,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 40px;
+  padding: 25px 60px;
 }
 
 .logo {
@@ -40,7 +40,7 @@ nav ul li a:hover {
 }
 
 nav ul li button {
-  background-color: white;
+  background-color: #fbe9f1;
   border-radius: 999px;
   color: #ca4d8c;
   border: 1px solid #ca4d8c;
@@ -49,11 +49,17 @@ nav ul li button {
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  transition: all 0.4s ease;
+}
+nav ul li button:hover {
+  background-color: #ca4d8c;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .nav-details {
   margin-top: auto;
-  margin-left: 8%;
+  margin-left: 6%;
   padding-bottom: 10%;
   z-index: 2;
 }
@@ -63,6 +69,7 @@ nav ul li button {
   font-family: 'Phudu', sans-serif;
   font-size: 75px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .highlight {
@@ -81,7 +88,7 @@ nav ul li button {
 .nav-image img{
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 50px;
   max-width: 100%;
   overflow: hidden;
   height: 70%;
@@ -161,6 +168,15 @@ nav ul li a:hover::after {
   .nav-image img {
     display: none;
     opacity: 80%;
+  }
+  .nav-details h1 ,.highlight {
+    font-size: 68px;
+  }
+  .nav-container {    align-items: center;
+    padding: 25px 40px;
+  }
+  .logo{
+    height: 50px;
   }
 }
 @media (max-width: 1400px) {

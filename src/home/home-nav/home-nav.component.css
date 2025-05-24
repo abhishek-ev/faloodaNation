@@ -32,10 +32,12 @@ nav {
     line-height: 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
+    transition: all 0.4s ease;
   }
   
   nav ul li a:hover {
     font-weight: bold;
+    transform: translateY(-2px);
   }
   
   nav ul li button {
@@ -47,6 +49,12 @@ nav {
     font-size: 18px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.4s ease;
+  }
+  nav ul li button:hover{
+      background-color: #b03b76;
+      color: #fff;
+      transform: translateY(-2px);
   }
   
   .nav-details {

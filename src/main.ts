@@ -3,7 +3,6 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
-import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 bootstrapApplication(AppComponent, appConfig)
@@ -11,7 +10,6 @@ bootstrapApplication(AppComponent, appConfig)
 
   bootstrapApplication(AppComponent, {
     providers: [
-      provideAnimations(),
       provideRouter(
         routes,
         withInMemoryScrolling({

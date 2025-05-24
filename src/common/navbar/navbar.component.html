@@ -12,10 +12,10 @@
     </ul>
   </div>
   <div class="nav-details">
-    <h1>OUR <span class="highlight">PRODUCTS</span></h1>
-    <p>Explore Our Unique varieties</p>
+    <h1>{{heading}} <span class="highlight">{{highlight}}</span></h1>
+    <p>{{navAbout}}</p>
   </div>
   <div class="nav-image">
-    <img src="images/ProductNavFalooda.png" alt="falooda">
+    <img [src]= "navImage || 'assets/images/ProductNavFalooda.png' " alt="falooda">
   </div>
 </nav>

@@ -5,35 +5,33 @@ import { GalleryComponent } from '../gallery/gallery.component';
 import { ProductsComponent } from '../products/products/products.component';
 import { ReviewsComponent } from '../gallery/reviews-section.component';
 import { HomeComponent } from '../home/home/home.component';
+import { HomeLayoutComponent } from './layouts/home-layout/home-layout/home-layout.component';
+import { DefaultLayoutComponent } from './layouts/default-layout/default-layout/default-layout.component';
 
 export const routes: Routes = [
     {
-        path:'',
+        path: '',
         redirectTo: 'home',
-        pathMatch:'full'
+        pathMatch: 'full'
     },
     {
-        path:'home',
-        component:HomeComponent
+      path: '',
+      component: HomeLayoutComponent,
+      children: [
+        { path: 'home', component: HomeComponent },
+      ]
     },
     {
-        path:'contactUs',
-        component:FranchisePartnerComponent
+      path: '',
+      component: DefaultLayoutComponent,
+      children: [
+        { path: 'aboutUs', component: AboutComponent },
+        { path: 'contactUs', component: FranchisePartnerComponent },
+        { path: 'gallery', component: GalleryComponent },
+        { path: 'ourProducts', component: ProductsComponent },
+        { path: 'review', component:ReviewsComponent},
+      ]
     },
-    {
-        path:'aboutUs',
-        component:AboutComponent
-    },
-    {
-        path:'gallery',
-        component:GalleryComponent
-    },
-    {
-        path:'ourProducts',
-        component:ProductsComponent
-    },
-    {
-        path:'review',
-        component:ReviewsComponent
-    },
-];
+    { path: '**', redirectTo: 'home' }
+  ];
+  

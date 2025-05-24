@@ -30,7 +30,7 @@
   
   .slider {
     display: inline-flex;
-    gap: 40px;
+    gap: 22px;
     transition: transform 0.1s linear;
   }
   
