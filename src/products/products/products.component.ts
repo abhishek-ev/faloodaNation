@@ -10,7 +10,7 @@ import { faloodaCategories } from '../../common/constants';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule, NavbarComponent, FooterComponent, FontAwesomeModule],
+  imports: [CommonModule, FooterComponent, FontAwesomeModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

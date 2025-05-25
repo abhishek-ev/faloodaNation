@@ -4,7 +4,7 @@
     <div class="category-details">
       <h3 class="category-name">{{ category.title }}</h3>
       <p class="category-subtitle">
-        <span class="arrow">➜</span>
+        <span class="arrow"></span>
         <strong>{{ category.subtitle }}</strong>
       </p>
       <ul class="category-list">
@@ -16,17 +16,19 @@
       <button class="variety-count">{{ category.items.length }} Varieties</button>
     </div>
   </div>
-
+</div>
+<div class="review-explore-outer">
   <div class="review-explore">
     <div class="review-details">
-      <h1>Hear from Our Delighted Customers</h1>
-      <p class="review-paragraph">Experience the joy through their words and see why Falooda Nation is loved by all.</p>
+      <div class="review-details-heading">
+        <h1>Hear from Our Delighted Customers</h1>
+      </div>
+      <p class="review-paragraph">Experience the joy through their words and see why Falooda Nation is loved by all</p>
       <button class="review-explore-btn" (click)="gotoGallery()">
         Explore <fa-icon [icon]="faCircleChevronRight"></fa-icon>
       </button>
-      <img class="review-image" src="images/ProductExploreFalooda.png" alt="Falooda">
     </div>
+    <img class="review-image" src="images/ProductExploreFalooda.png" alt="Falooda">
   </div>
-  
 </div>
 <app-footer></app-footer>

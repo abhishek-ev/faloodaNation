@@ -36,3 +36,18 @@
     max-width: 1200px;
     margin: auto;
   }
+  @media (max-width : 410px) {
+    .button-group button {
+      padding: 10px 20px;
+      font-size: 14px;
+    } 
+  }
+  @media (max-width : 345px) {
+    .button-group button {
+      padding: 9px 19px;
+      font-size: 12px;
+    }
+    .button-group {
+      gap: 8px;
+    }
+  }

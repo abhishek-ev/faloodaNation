@@ -64,10 +64,10 @@ footer .container {
     display: inline-block;
     color: #CA4D8C;
     font-size: 20px;
-    margin: 0 15px;
+    margin: 0 10px;
     transition: 0.5s;
     background-color:#fff;
-    padding: 9px 10px;
+    padding: 10px 12px;
     border-radius: 100%;  
 }
 

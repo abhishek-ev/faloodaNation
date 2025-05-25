@@ -32,3 +32,16 @@
     text-align: center;
     margin: 20px 0;
   }
+  
+  @media (max-width : 410px) {
+    .view-more-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    
+  }  @media (max-width : 345px) {
+    .view-more-btn {
+      padding: 9px 19px;
+      font-size: 12px;
+    }
+  }

@@ -8,7 +8,7 @@
 
 .review-card {
   background-color: rgba(19, 145, 134, 0.1);
-  padding: 1rem;
+  padding: 2.5rem;
   border-radius: 8px;
   width: 100%;
   max-width: 300px;
@@ -183,5 +183,17 @@
   }
   100% {
     background-position: 1000px 1000px, 1010px 1010px, 1020px 1020px;
+  }
+}
+@media (max-width : 410px) {
+  .view-more-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+}  @media (max-width : 345px) {
+  .view-more-btn {
+    padding: 9px 19px;
+    font-size: 12px;
   }
 }
