@@ -12,8 +12,8 @@ import { reviews } from '../common/constants';
 export class ReviewsComponent {
   placeName: string = '';
 
-  allReviews: { name: string; message: string }[] = [];
-  visibleReviews: { name: string; message: string }[] = [];
+  allReviews: { name: string; message: string; profilepic:string }[] = [];
+  visibleReviews: { name: string; message: string; profilepic:string }[] = [];
   loadCount = 6;
   reviews = reviews;
   ngOnInit() {

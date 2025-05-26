@@ -179,7 +179,7 @@ nav {
   
     nav ul.active {
       z-index: 10;
-      max-height: 600px;
+      min-height: 100%;
       padding: 0px 0px 15px 0px;
       border-bottom: 1px solid #e3cfd9;
     }
