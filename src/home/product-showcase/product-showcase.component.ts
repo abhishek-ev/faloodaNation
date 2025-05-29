@@ -6,9 +6,13 @@ import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { faloodaCategories } from '../../common/constants';
 
+
+//service
+import { DataService } from '../../service/data.service';
+
 @Component({
   selector: 'app-product-showcase',
-  imports: [CommonModule,FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './product-showcase.component.html',
   styleUrl: './product-showcase.component.css',
   animations: [
@@ -24,10 +28,27 @@ import { faloodaCategories } from '../../common/constants';
     ])
   ]
 })
+
 export class ProductShowcaseComponent {
-  constructor(private routes : Router){}
+
+  constructor(
+    private routes: Router,
+    private dataService: DataService
+  ) { }
+
+
   faCircleChevronRight = faCircleChevronRight
   products = faloodaCategories;
+
+
+  ngOnInit(): void {
+    this.dataService.getCategoryList().then((categoryList) => {
+      console.debug("categoryList", categoryList)
+      // this.products = categoryList;
+    });
+  }
+
+
   onViewAllClick() {
     this.routes.navigate(['/ourProducts'])
   }
