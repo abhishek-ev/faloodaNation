@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { videolinks } from '../common/constants';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-videos-section',
@@ -10,30 +10,30 @@ import { videolinks } from '../common/constants';
   templateUrl: './videos-section.component.html',
   styleUrl: './videos-section.component.css'
 })
-export class VideosComponent {
-  allVedios: SafeResourceUrl[] = [];
-  visibleVedios: SafeResourceUrl[] = [];
+export class VideosComponent implements OnInit {
+  gallery: any[] = [];
+  visibleVideos: SafeResourceUrl[] = [];
   loadCount = 12;
-  videolinks: SafeResourceUrl[] = [];
 
-  constructor(private sanitizer: DomSanitizer) {
-    const urls = videolinks;
+  constructor(private dataService: DataService, private sanitizer: DomSanitizer) {}
 
-    this.videolinks = urls.map(url =>
-      this.sanitizer.bypassSecurityTrustResourceUrl(url)
+ngOnInit() {
+  this.dataService.getGallery().then((data) => {
+    const allUrls = data.map(item =>
+      this.sanitizer.bypassSecurityTrustResourceUrl(item.url)
     );
-  }
-  ngOnInit() {
-    this.allVedios = this.videolinks;
-    this.visibleVedios = this.allVedios.slice(0, this.loadCount);
-  }
-  
-  viewMore() {
-    const next = this.visibleVedios.length + this.loadCount;
-    this.visibleVedios = this.allVedios.slice(0, next);
-  }
-  
+    this.visibleVideos = allUrls.slice(0, this.loadCount);
+  }).catch((error) => {
+    console.error("Error fetching gallery: ", error);
+  });
+}
+
+viewMore() {
+  const next = this.visibleVideos.length + this.loadCount;
+  this.visibleVideos = this.gallery.slice(0, next);
+}
+
   get allLoaded() {
-    return this.visibleVedios.length >= this.allVedios.length;
+    return this.visibleVideos.length >= this.gallery.length;
   }
 }

@@ -4,13 +4,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faPhone, faBars} from '@fortawesome/free-solid-svg-icons' 
 import { CommonModule } from '@angular/common';
 import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { RouterOutlet,RouterLinkActive } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-home-nav',
-  imports: [FontAwesomeModule, RouterLink,CommonModule,RouterOutlet,RouterLinkActive],
+  imports: [FontAwesomeModule, RouterLink,CommonModule],
   templateUrl: './home-nav.component.html',
   styleUrl: './home-nav.component.css'
   

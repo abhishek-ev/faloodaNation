@@ -1,5 +1,5 @@
 <div class="memory-grid">
-  <img *ngFor="let img of visibleMemories" [src]="img" alt="Memory image" class="memory-img" />
+  <img *ngFor="let img of visibleMemories" [src]="img.image" alt="Memory image" class="memory-img" />
 </div>
 
 <div class="view-more-wrapper" *ngIf="!allLoaded">

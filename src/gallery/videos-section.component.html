@@ -1,8 +1,9 @@
 <div class="grid">
-    <div class="video-thumbnail" *ngFor="let video of visibleVedios" >
-    <iframe [src]="video" frameborder="0" allowfullscreen></iframe>    
-    </div>
-</div>
-<div class="view-more-wrapper" *ngIf="!allLoaded">
-    <button class="view-more-btn" (click)="viewMore()">View More</button>
+  <div class="video-thumbnail" *ngFor="let video of visibleVideos">
+    <iframe [src]="video" frameborder="0" allowfullscreen></iframe>
   </div>
+</div>
+
+<div class="view-more-wrapper" *ngIf="!allLoaded">
+  <button class="view-more-btn" (click)="viewMore()">View More</button>
+</div>

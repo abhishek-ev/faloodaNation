@@ -1,6 +1,6 @@
-import { Component ,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { images } from '../common/constants';
+import { DataService } from '../service/data.service';
 
 
 @Component({
@@ -10,24 +10,28 @@ import { images } from '../common/constants';
   styleUrl: './memories-section.component.css'
 })
 export class MemoriesComponent implements OnInit {
-  allMemories: string[] = [];
-  visibleMemories: string[] = [];
+  allMemories: { image: string, name?: string }[] = [];
+  visibleMemories: { image: string, name?: string }[] = [];
   loadCount = 12;
 
-  images = images;
+  constructor(private dataService: DataService) { }
 
-ngOnInit() {
-  this.allMemories = this.images;
-  this.visibleMemories = this.allMemories.slice(0, this.loadCount);
-}
+  ngOnInit() {
+    this.dataService.getPosters().then((data) => {
+      this.allMemories = data;
+      this.visibleMemories = this.allMemories.slice(0, this.loadCount);
+    }).catch((error) => {
+      console.error("Error fetching posters: ", error);
+    });
+  }
 
-viewMore() {
-  const next = this.visibleMemories.length + this.loadCount;
-  this.visibleMemories = this.allMemories.slice(0, next);
-}
+  viewMore() {
+    const next = this.visibleMemories.length + this.loadCount;
+    this.visibleMemories = this.allMemories.slice(0, next);
+  }
 
-get allLoaded() {
-  return this.visibleMemories.length >= this.allMemories.length;
-}
-  
+  get allLoaded() {
+    return this.visibleMemories.length >= this.allMemories.length;
+  }
+
 }

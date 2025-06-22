@@ -1,21 +1,40 @@
 
 <div class="products-cards" id="products-cards">
-  <div class="product-card" *ngFor="let category of faloodaCategories">
+  <div class="product-card" *ngFor="let category of categoryData">
     <div class="category-details">
-      <h3 class="category-name">{{ category.title }}</h3>
+      <h3 class="category-name">{{ category.name }}</h3>
       <p class="category-subtitle">
-        <span class="arrow"></span>
-        <strong>{{ category.subtitle }}</strong>
+        <span class="arrow">➤</span>
+        <strong>{{ category.description }}</strong>
       </p>
       <ul class="category-list">
-        <li *ngFor="let item of category.items">{{ item }}</li>
+        <li *ngFor="let item of category.items" (click)="onItemClick(category.id, item)">
+          {{ item.name }}
+        </li>
       </ul>
     </div>
-    <div class="category-image">
-      <img [src]="category.imageUrl" [alt]="category.title + ' image'" />
+
+    <div
+      class="category-image"
+      (click)="onImageClick(
+        selectedImages[category.id]?.image || category.image,
+        selectedImages[category.id]?.description || category.description
+      )"
+    >
+      <img
+        [src]="selectedImages[category.id]?.image || category.image"
+        [alt]="category.name + ' image'"
+        [title]="selectedImages[category.id]?.description || category.description"
+      />
       <button class="variety-count">{{ category.items.length }} Varieties</button>
     </div>
   </div>
+</div>
+
+<!-- Popup -->
+<div class="image-popup" *ngIf="showPopup" (click)="closePopup()">
+  <img [src]="popupImage" alt="Popup Image" />
+  <div class="popup-description">{{ popupDescription }}</div>
 </div>
 <div class="review-explore-outer">
   <div class="review-explore">

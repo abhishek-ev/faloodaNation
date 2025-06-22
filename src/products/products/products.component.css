@@ -73,6 +73,7 @@
         max-height: 250px;
         padding-right: 0.5rem;
         scroll-behavior: smooth;
+        cursor: pointer;
 
         li {
           color: #2C2C2C;
@@ -127,6 +128,36 @@
       }
     }
   }
+}
+
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.image-popup img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.image-popup .popup-description {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 90%;
 }
 
 @keyframes fadeIn {

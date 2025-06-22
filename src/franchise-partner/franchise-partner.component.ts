@@ -5,18 +5,21 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {SOCIAL_MEDIA_LINKS, Branches} from '../common/constants'
-import { NavbarComponent } from '../common/navbar/navbar.component';
 import { FooterComponent } from '../common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import emailjs from '@emailjs/browser'
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-franchise-partner',
-  imports: [CommonModule, FontAwesomeModule,NavbarComponent,FooterComponent,FormsModule],
+  imports: [CommonModule, FontAwesomeModule,FooterComponent,FormsModule],
   templateUrl: './franchise-partner.component.html',
   styleUrl: './franchise-partner.component.css'
 })
 export class FranchisePartnerComponent {
+
+  ngOnInit() {
+  console.log('API URL:', this.apiUrl);
+}
   faLocationDot = faLocationDot
   faYoutube = faYoutube;
   faInstagram = faInstagram;
@@ -24,7 +27,7 @@ export class FranchisePartnerComponent {
   faLinkedin = faLinkedin;
   socialLink = SOCIAL_MEDIA_LINKS;
   selectedLocation!: SafeResourceUrl;
-
+  apiUrl = `https://formsapi.jabwn.com/key/${environment.jabwnApiKey}`;
   branches = Branches;
 
   constructor(private sanitizer: DomSanitizer) {

@@ -9,6 +9,7 @@ import { faloodaCategories } from '../../common/constants';
 
 //service
 import { DataService } from '../../service/data.service';
+import { Category } from '../../model/category.model';
 
 @Component({
   selector: 'app-product-showcase',
@@ -38,13 +39,14 @@ export class ProductShowcaseComponent {
 
 
   faCircleChevronRight = faCircleChevronRight
-  products = faloodaCategories;
+   categoryData: any[] = [];
 
 
   ngOnInit(): void {
-    this.dataService.getCategoryList().then((categoryList) => {
-      console.debug("categoryList", categoryList)
-      // this.products = categoryList;
+    this.dataService.getCategoryWithMenuItems().then((data) => {
+      this.categoryData = data;
+    }).catch((err) => {
+      console.error('Error fetching data', err);
     });
   }
 

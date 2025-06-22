@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { offers } from '../../common/constants';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-offers',
@@ -10,18 +11,29 @@ import { offers } from '../../common/constants';
   animations: []
 
 })
-export class OffersComponent {
+export class OffersComponent implements OnInit {
+    offers: any[] = [];
+
+      constructor(private dataService: DataService) {}
+
+        ngOnInit() {
+    this.dataService.getOffers().then((data) => {
+      this.offers = data;
+    }).catch((error) => {
+      console.error("Error fetching offers: ", error);
+    });
+  }
 
   popupImage: string | null = null;
 
-  openPopup(imageUrl: string) {
-    this.popupImage = imageUrl;
+  openPopup(image: string) {
+    this.popupImage = image;
   }
 
   closePopup() {
     this.popupImage = null;
   }
-  offers = offers;
+ 
 
   whyUsCards = [
     { icon: 'images/icon-unique-varieties-icon.png', title: '35+ Unique Varieties' },

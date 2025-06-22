@@ -5,13 +5,12 @@ import { MemoriesComponent } from './memories-section.component';
 import { VideosComponent } from './videos-section.component';
 import { ReviewsComponent } from './reviews-section.component';
 import { ContactCardComponent } from "../common/contact-card/contact-card.component";
-import { NavbarComponent } from "../common/navbar/navbar.component";
 import { FooterComponent } from "../common/footer/footer.component";
 
 
 @Component({
   selector: 'app-gallery',
-  imports: [CommonModule, MemoriesComponent, VideosComponent, ReviewsComponent, ContactCardComponent, NavbarComponent, FooterComponent],
+  imports: [CommonModule, MemoriesComponent, VideosComponent, ReviewsComponent, ContactCardComponent, FooterComponent],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })

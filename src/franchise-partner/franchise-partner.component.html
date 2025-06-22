@@ -3,7 +3,7 @@
     <div class="form-content">
       <h2>Become a Franchise Partner</h2>
       <p>Fill out the form to start your journey with Falooda Nation</p>
-      <form >
+      <form ngNoForm [attr.action]="apiUrl" method="POST" enctype="multipart/form-data">
         <input type="text" placeholder="Name" name="name" required>
         <input type="tel" placeholder="Phone No." name="phone" required>
         <input type="email" placeholder="Email" name="email" required>
