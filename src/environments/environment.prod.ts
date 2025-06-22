@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  jabwnApiKey: 'pI8ZTlm7WGmQbXcjhXSA'
+  jabwnApiKey: 'Z4R2y6xc0FRMQQhk2TlX'
 };
