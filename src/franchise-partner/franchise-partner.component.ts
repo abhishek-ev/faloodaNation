@@ -1,25 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import {SOCIAL_MEDIA_LINKS, Branches} from '../common/constants'
+import { SOCIAL_MEDIA_LINKS, Branches } from '../common/constants'
 import { FooterComponent } from '../common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
+
 @Component({
   selector: 'app-franchise-partner',
-  imports: [CommonModule, FontAwesomeModule,FooterComponent,FormsModule],
+  imports: [CommonModule, FontAwesomeModule, FooterComponent, FormsModule],
   templateUrl: './franchise-partner.component.html',
   styleUrl: './franchise-partner.component.css'
 })
 export class FranchisePartnerComponent {
 
-  ngOnInit() {
-  console.log('API URL:', this.apiUrl);
-}
   faLocationDot = faLocationDot
   faYoutube = faYoutube;
   faInstagram = faInstagram;
@@ -29,6 +27,13 @@ export class FranchisePartnerComponent {
   selectedLocation!: SafeResourceUrl;
   apiUrl = `https://formsapi.jabwn.com/key/${environment.jabwnApiKey}`;
   branches = Branches;
+
+  @ViewChild('name') nameInput!: ElementRef;
+  @ViewChild('phone') phoneInput!: ElementRef;
+  @ViewChild('email') emailInput!: ElementRef;
+  @ViewChild('message') messageInput!: ElementRef;
+
+  submissionSuccess = false;
 
   constructor(private sanitizer: DomSanitizer) {
     this.setLocation('Falooda Nation');
@@ -41,5 +46,18 @@ export class FranchisePartnerComponent {
     this.selectedLocation = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`);
   }
 
-  
+  onSubmitSuccess(event: Event) {
+    // Optional: delay success message until Jabwn returns — but iframe won’t give callback
+    this.submissionSuccess = true;
+
+    // Reset input values manually
+    setTimeout(() => {
+      this.submissionSuccess = false;
+      this.nameInput.nativeElement.value = '';
+      this.phoneInput.nativeElement.value = '';
+      this.emailInput.nativeElement.value = '';
+      this.messageInput.nativeElement.value = '';
+    }, 4000);
+  }
+
 }
