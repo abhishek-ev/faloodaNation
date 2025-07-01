@@ -1,11 +1,10 @@
 
 <div class="products-cards" id="products-cards">
-  <div class="product-card" *ngFor="let category of categoryData">
+  <div class="product-card" *ngFor="let category of categoryData; let i = index" #card>
     <div class="category-details">
       <h3 class="category-name">{{ category.name }}</h3>
       <p class="category-subtitle">
-        <span class="arrow">➤</span>
-        <strong>{{ category.description }}</strong>
+        {{ category.description }}
       </p>
       <ul class="category-list">
         <li *ngFor="let item of category.items" (click)="onItemClick(category.id, item)">
@@ -25,6 +24,8 @@
         [src]="selectedImages[category.id]?.image || category.image"
         [alt]="category.name + ' image'"
         [title]="selectedImages[category.id]?.description || category.description"
+        loading="lazy"
+        decoding="async"
       />
       <button class="variety-count">{{ category.items.length }} Varieties</button>
     </div>
