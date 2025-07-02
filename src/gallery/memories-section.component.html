@@ -1,5 +1,14 @@
 <div class="memory-grid">
-  <img *ngFor="let img of visibleMemories" [src]="img.image" alt="Memory image" class="memory-img" />
+  <img
+    *ngFor="let img of visibleMemories; let i = index"
+    [src]="img.image"
+    alt="Memory image"
+    class="memory-img"
+    data-aos="zoom-in"
+    [attr.data-aos-delay]="i * 50"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+  />
 </div>
 
 <div class="view-more-wrapper" *ngIf="!allLoaded">

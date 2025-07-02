@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,6 +8,7 @@ import { SOCIAL_MEDIA_LINKS, Branches } from '../common/constants'
 import { FooterComponent } from '../common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+import * as AOS from 'aos';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { environment } from '../environments/environment';
   templateUrl: './franchise-partner.component.html',
   styleUrl: './franchise-partner.component.css'
 })
-export class FranchisePartnerComponent {
+export class FranchisePartnerComponent implements OnInit, AfterViewInit  {
 
   faLocationDot = faLocationDot
   faYoutube = faYoutube;
@@ -35,7 +36,7 @@ export class FranchisePartnerComponent {
 
   submissionSuccess = false;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer, private cdRef: ChangeDetectorRef  ) {
     this.setLocation('Falooda Nation');
   }
 
@@ -59,5 +60,28 @@ export class FranchisePartnerComponent {
       this.messageInput.nativeElement.value = '';
     }, 4000);
   }
+
+ngOnInit(): void {
+  AOS.init({
+    duration: 1000,          
+    easing: 'ease-in-out',  
+    once: true,             
+    offset: 220            
+  });
+}
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      AOS.refreshHard();
+    }, 100);
+  }
+
+  animationPicker(index: number, total: number): string {
+  return index % 2 === 0 ? 'fade-left' : 'fade-right';
+}
+
+animationTiming(index: number, total: number): string {
+  return `${900 + (index * 100)}`;
+}
 
 }

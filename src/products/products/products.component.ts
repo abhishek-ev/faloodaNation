@@ -51,7 +51,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
           const index = +entry.target.getAttribute('data-index')!;
           const className = index % 2 === 0 ? 'animate-left' : 'animate-right';
           entry.target.classList.add(className);
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // unobserve after animation triggers
         }
       });
     },
@@ -61,9 +61,14 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   this.cards.forEach((cardEl, i) => {
     cardEl.nativeElement.setAttribute('data-index', i.toString());
     observer.observe(cardEl.nativeElement);
-  });
-}
+  });this.cards.forEach((cardEl, i) => {
+  const delay = i * 50; 
+  cardEl.nativeElement.style.animationDelay = `${delay}ms`;
+  cardEl.nativeElement.setAttribute('data-index', i.toString());
+  observer.observe(cardEl.nativeElement);
+});
 
+}
 
   gotoGallery(): void {
     this.route.navigate(['/gallery'], { fragment: 'container' });

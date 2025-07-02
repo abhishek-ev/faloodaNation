@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../service/data.service';
+import AOS from 'aos';
 
 
 @Component({
@@ -20,18 +21,28 @@ export class MemoriesComponent implements OnInit {
     this.dataService.getPosters().then((data) => {
       this.allMemories = data;
       this.visibleMemories = this.allMemories.slice(0, this.loadCount);
+      setTimeout(() => AOS.refreshHard(), 0); // refresh after rendering
     }).catch((error) => {
       console.error("Error fetching posters: ", error);
     });
+
+    AOS.init({
+    duration: 600,
+    once: true,
+    easing: 'ease-in-out',
+    offset: 100
+  });
   }
 
   viewMore() {
     const next = this.visibleMemories.length + this.loadCount;
     this.visibleMemories = this.allMemories.slice(0, next);
+    setTimeout(() => AOS.refreshHard(), 0); // refresh AOS after DOM update
   }
 
   get allLoaded() {
     return this.visibleMemories.length >= this.allMemories.length;
   }
+
 
 }
