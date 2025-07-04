@@ -1,6 +1,6 @@
 <div class="landing-container">
   <!-- Left Side Content -->
-  <div class="text-left animate-on-scroll">
+  <div class="text-left" data-aos="fade-up" data-aos-duration="1000">
     <p class="about-label">About Us</p>
     <h1 class="main-heading">
       FROM CLASSIC TO INNOVATIVE,<br />
@@ -10,31 +10,35 @@
     <button class="learn-more-btn" (click)="gotoAbout()">
       Learn More <span class="arrow"><fa-icon [icon]="faCircleChevronRight"></fa-icon></span>
     </button>
-    <div class="text-right-mobile animate-on-scroll">
-      <p class="sub-text">
-        Born from a love for falooda, Falooda Nation brings 35+ unique flavors crafted from India’s 
-        iconic falooda hubs to Calicut. With outlets in Trivandrum and plans for Kochi, Bengaluru, and Dubai, the journey continues.    </p>
+    <div class="text-right-mobile" >
+      <div class="subtext-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <p class="sub-text">
+          Born from a love for falooda, Falooda Nation brings 35+ unique flavors crafted from India’s 
+          iconic falooda hubs to Calicut. With outlets in Trivandrum and plans for Kochi, Bengaluru, and Dubai, the journey continues.
+        </p>
+      </div>
     </div>
   </div>
 
   <!-- Center Image with Bubbles -->
-  <div class="image-section animate-on-scroll">
+  <div class="image-section">
     <!-- Bubble Images -->
-    <img src="images/ingredient1.png" alt="Bubble Left Top" class="bubble bubble-left-top" />
-    <img src="images/ingredient2.png" alt="Bubble Left Bottom" class="bubble bubble-left-bottom" />
-    <img src="images/ingredient3.png" alt="Bubble Right Top" class="bubble bubble-right-top" />
-    <img src="images/ingredient4.png" alt="Bubble Right Bottom" class="bubble bubble-right-bottom" />
-
+    <img src="images/ingredient1.png" alt="Bubble Left Top" class="bubble bubble-left-top" data-aos="zoom-in" data-aos-delay="100" />
+    <img src="images/ingredient2.png" alt="Bubble Left Bottom" class="bubble bubble-left-bottom" data-aos="zoom-in" data-aos-delay="200" />
+    <img src="images/ingredient3.png" alt="Bubble Right Top" class="bubble bubble-right-top" data-aos="zoom-in" data-aos-delay="300" />
+    <img src="images/ingredient4.png" alt="Bubble Right Bottom" class="bubble bubble-right-bottom" data-aos="zoom-in" data-aos-delay="400" />
   </div>
-      <!-- Main Dessert Image -->
 
-      <img src="images/falooda-glass.png" alt="Dessert" class="main-dessert" />
-
+  <!-- Main Dessert Image -->
+  <img src="images/falooda-glass.png" alt="Dessert" class="main-dessert" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1200" />
 
   <!-- Right Side Paragraph -->
-  <div class="text-right animate-on-scroll">
-    <p class="sub-text">
-      Born from a love for falooda, Falooda Nation brings 35+ unique flavors crafted from India’s 
-      iconic falooda hubs to Calicut. With outlets in Trivandrum and plans for Kochi, Bengaluru, and Dubai, the journey continues.    </p>
+  <div class="text-right" data-aos="fade-left" data-aos-delay="300">
+    <div class="subtext-wrapper">
+      <p class="sub-text">
+        Born from a love for falooda, Falooda Nation brings 35+ unique flavors crafted from India’s 
+        iconic falooda hubs to Calicut. With outlets in Trivandrum and plans for Kochi, Bengaluru, and Dubai, the journey continues.
+      </p>
+    </div>
   </div>
 </div>

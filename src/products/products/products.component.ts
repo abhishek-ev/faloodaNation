@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { DataService } from '../../service/data.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-products',
@@ -21,7 +22,7 @@ import { DataService } from '../../service/data.service';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit, AfterViewInit {
-  constructor(private route: Router, private dataService: DataService) {}
+  constructor(private route: Router, private dataService: DataService) { }
 
   faCircleChevronRight = faCircleChevronRight;
   categoryData: any[] = [];
@@ -44,31 +45,37 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = +entry.target.getAttribute('data-index')!;
-          const className = index % 2 === 0 ? 'animate-left' : 'animate-right';
-          entry.target.classList.add(className);
-          observer.unobserve(entry.target); // unobserve after animation triggers
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+    AOS.init({
+      once: true,
+      duration: window.innerWidth < 768 ? 600 : 1000,
+      offset: 100,
+    });
 
-  this.cards.forEach((cardEl, i) => {
-    cardEl.nativeElement.setAttribute('data-index', i.toString());
-    observer.observe(cardEl.nativeElement);
-  });this.cards.forEach((cardEl, i) => {
-  const delay = i * 50; 
-  cardEl.nativeElement.style.animationDelay = `${delay}ms`;
-  cardEl.nativeElement.setAttribute('data-index', i.toString());
-  observer.observe(cardEl.nativeElement);
-});
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = +entry.target.getAttribute('data-index')!;
+            const className = index % 2 === 0 ? 'animate-left' : 'animate-right';
+            entry.target.classList.add(className);
+            observer.unobserve(entry.target); // unobserve after animation triggers
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-}
+    this.cards.forEach((cardEl, i) => {
+      cardEl.nativeElement.setAttribute('data-index', i.toString());
+      observer.observe(cardEl.nativeElement);
+    }); this.cards.forEach((cardEl, i) => {
+      const delay = i * 50;
+      cardEl.nativeElement.style.animationDelay = `${delay}ms`;
+      cardEl.nativeElement.setAttribute('data-index', i.toString());
+      observer.observe(cardEl.nativeElement);
+    });
+
+  }
 
   gotoGallery(): void {
     this.route.navigate(['/gallery'], { fragment: 'container' });

@@ -1,4 +1,3 @@
-
 <div class="products-cards" id="products-cards">
   <div class="product-card" *ngFor="let category of categoryData; let i = index" #card>
     <div class="category-details">
@@ -13,20 +12,12 @@
       </ul>
     </div>
 
-    <div
-      class="category-image"
-      (click)="onImageClick(
+    <div class="category-image" (click)="onImageClick(
         selectedImages[category.id]?.image || category.image,
         selectedImages[category.id]?.description || category.description
-      )"
-    >
-      <img
-        [src]="selectedImages[category.id]?.image || category.image"
-        [alt]="category.name + ' image'"
-        [title]="selectedImages[category.id]?.description || category.description"
-        loading="lazy"
-        decoding="async"
-      />
+      )">
+      <img [src]="selectedImages[category.id]?.image || category.image" [alt]="category.name + ' image'"
+        [title]="selectedImages[category.id]?.description || category.description" loading="lazy" decoding="async" />
       <button class="variety-count">{{ category.items.length }} Varieties</button>
     </div>
   </div>
@@ -39,17 +30,21 @@
 </div>
 
 <div class="review-explore-outer">
-  <div class="review-explore">
+  <div class="review-explore" data-aos="fade-up" data-aos-duration="1200">
     <div class="review-details">
-      <div class="review-details-heading">
-        <h1>Hear from Our Delighted Customers</h1>
+      <div class="review-details-heading" data-aos="fade-right" data-aos-delay="300">
+        <h1>Hear from Our <br class="mobile-break" /> Delighted Customers</h1>
       </div>
-      <p class="review-paragraph">Experience the joy through their words and see why Falooda Nation is loved by all</p>
-      <button class="review-explore-btn" (click)="gotoGallery()">
-        Explore <fa-icon [icon]="faCircleChevronRight"></fa-icon>
+      <p class="review-paragraph" data-aos="fade-right" data-aos-delay="600">
+        Experience the joy through their words and see why Falooda Nation is loved by all
+      </p>
+      <button class="review-explore-btn" (click)="gotoGallery()" data-aos="zoom-in-up" data-aos-delay="800">
+        Connect Us <fa-icon [icon]="faCircleChevronRight"></fa-icon>
       </button>
     </div>
-    <img class="review-image" src="images/ProductExploreFalooda.png" alt="Falooda">
+
+    <img class="review-image" src="images/ProductExploreFalooda.png" alt="Falooda" data-aos="fade-left"
+      data-aos-delay="900" />
   </div>
 </div>
 <app-footer></app-footer>

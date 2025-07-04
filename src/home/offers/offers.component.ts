@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { offers } from '../../common/constants';
 import { DataService } from '../../service/data.service';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-offers',
@@ -12,11 +13,16 @@ import { DataService } from '../../service/data.service';
 
 })
 export class OffersComponent implements OnInit {
-    offers: any[] = [];
+  offers: any[] = [];
 
-      constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) { }
 
-        ngOnInit() {
+  ngOnInit() {
+    AOS.init({
+      once: true,
+      duration: 1000,
+    });
+
     this.dataService.getOffers().then((data) => {
       this.offers = data;
     }).catch((error) => {
@@ -33,7 +39,7 @@ export class OffersComponent implements OnInit {
   closePopup() {
     this.popupImage = null;
   }
- 
+
 
   whyUsCards = [
     { icon: 'images/icon-unique-varieties-icon.png', title: '35+ Unique Varieties' },

@@ -1,89 +1,133 @@
 .testimonial-section {
-    padding: 40px 20px;
-    max-width: 93%;
-    margin: auto;
-    overflow: hidden;
+  padding: 60px 20px;
+  max-width: 93%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
   }
   
   .subtitle {
-    color: #CA4E8D;
-    font-size: 16px;
-    margin-bottom: 10px;
+  color: #CA4E8D;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
   }
   
   .title {
-    font-size: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 45px;
-    margin-bottom: 40px;
-    text-decoration-color: #2C2C2C;
-    font-family: 'Phudu', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  font-family: 'Phudu', sans-serif;
+  color: #2C2C2C;
   }
   
   .slider-container {
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    border-radius: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: grab;
+  border-radius: 20px;
+  position: relative;
   }
   
   .slider {
     display: inline-flex;
     gap: 22px;
     transition: transform 0.1s linear;
+    padding-bottom: 10px;
   }
   
   .card {
-    flex: 0 0 auto;
-    background-color: #eaf6f5;
-    border-radius: 12px;
-    padding: 25px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: 248px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    user-select: none;
-    min-width: 300px;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 260px;
+  min-width: 300px;
+  max-width: 100%;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInCard 0.8s ease-in-out both;
+   overflow: hidden;
   }
+  .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
   
   .card .quote {
-    font-size: 70px;
-    color: #139186;
+    font-size: 64px;
+  color: #139186;
+  margin-bottom: 10px;
   }
   
   .card p {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #2C2C2C;
-    opacity: 0.5;
+    font-size: 16px;
+  color: #333;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  overflow-y: auto;         
+  max-height: 120px;       
+  padding-right: 5px;     
+  scrollbar-width: thin;
   }
+
+  .card p::-webkit-scrollbar {
+  width: 4px;
+}
+
+.card p::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
   
   .card strong {
-    font-size: 18px;
-    font-weight: bold;
-    color: #2C2C2C;
+    font-size: 16px;
+  font-weight: bold;
+  color: #2C2C2C;
   }
   
+  /* Animation */
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
   @media (max-width: 640px) {
     .testimonial-section {
-      max-width: 100%;
+     padding: 40px 10px;
+    border-radius: 0;
     }
-  
+  .slider {
+    gap: 16px; 
+  }
     .card {
-      height: auto;
-      padding: 20px;
-      width: 200px;
+      width: 260px;
+      height: 240px;
+    padding: 20px 15px;
     }
   
     .title {
-      font-size: 50px;
+      font-size: 32px;
+    line-height: 1.3;
     }
     .card .quote {
         font-size: 50px;
@@ -92,7 +136,10 @@
       
       .card p {
         font-size: 14px;
-        margin-bottom: 15px;
+        max-height: 100px;
       }
+      .card strong {
+    font-size: 14px;
+  }
   }
   

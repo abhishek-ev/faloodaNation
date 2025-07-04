@@ -2,7 +2,7 @@ nav {
     background-color: #fdeef4;
     background-size: cover;
     background-position: center;
-    height: 700px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;

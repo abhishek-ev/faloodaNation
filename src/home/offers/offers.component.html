@@ -1,9 +1,17 @@
-<section class="offers-section">
-  <p class="section-label" id="offers">New Offers</p>
-  <h2 class="section-title">Irresistible Falooda Offers Await!</h2>
+<section class="offers-section" aos>
+  <p class="section-label" id="offers" data-aos="fade-down" data-aos-duration="1200" data-aos-easing="ease-in-out">New Offers</p>
+  <h2 class="section-title" data-aos="fade-up" data-aos-duration="1400" data-aos-easing="ease-in-out">Irresistible Falooda Offers Await!</h2>
 
   <div class="offers-container">
-    <div class="offer-card" *ngFor="let offer of offers" (click)="openPopup(offer.image)">
+    <div 
+      class="offer-card" 
+      *ngFor="let offer of offers; let i = index"
+      (click)="openPopup(offer.image)"
+      [attr.data-aos]="i % 2 === 0 ? 'fade-up-right' : 'fade-up-left'"
+      [attr.data-aos-delay]="i * 200"
+      data-aos-duration="1200"
+      data-aos-easing="ease-out-back"
+    >
       <img [src]="offer.image" alt="Offer" />
     </div>
   </div>
@@ -18,19 +26,21 @@
 </section>
 
 <section class="why-us-section">
-  <div class="why-us-text">
-    <h6 class="subtitle">Why Choose Us</h6>
-    <h2 class="main-title">WHY FALOODA NATION STANDS OUT!</h2>
-    <div class="cards">
-      <div class="card" *ngFor="let card of whyUsCards">
-        <div class="icon">
-          <img [src]="card.icon" alt="icon" />
+  <div class="why-us-content">
+    <div class="why-us-text">
+      <h6 class="subtitle">Why Choose Us</h6>
+      <h2 class="main-title">WHY FALOODA NATION STANDS OUT!</h2>
+      <div class="cards">
+        <div class="card" *ngFor="let card of whyUsCards">
+          <div class="icon">
+            <img [src]="card.icon" alt="icon" />
+          </div>
+          <p>{{ card.title }}</p>
         </div>
-        <p>{{ card.title }}</p>
       </div>
     </div>
-  </div>
-  <div class="juice-img">
-    <img src="images/falooda-whyus.png" alt="Juice Image" class="fade-in" />
+    <div class="juice-img" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
+      <img src="images/falooda-whyus.png" alt="Juice Image" />
+    </div>
   </div>
 </section>

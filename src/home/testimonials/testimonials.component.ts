@@ -2,15 +2,18 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { reviews } from '../../common/constants';
+import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-testimonials',
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.css'
 })
 export class TestimonialsComponent implements OnInit,OnDestroy {
   constructor(private router:Router){}
+  faCircleChevronRight = faCircleChevronRight
   currentIndex = 0;
   isPaused = false;
   scrollPosition = 0;

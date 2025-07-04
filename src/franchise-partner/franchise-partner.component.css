@@ -1,5 +1,6 @@
-:host {
+html,body,:host {
   display: block;
+  overflow-x: hidden;
 }
 
 .franchise-form-section {
@@ -129,6 +130,7 @@
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    overflow-x: hidden;
 
     .branch-card {
       background: #ffe6f0;
@@ -136,6 +138,9 @@
       padding: 1.5rem;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 100%;
+      box-sizing: border-box;
+      will-change: transform; 
 
       &:hover {
         transform: translateY(-5px);
