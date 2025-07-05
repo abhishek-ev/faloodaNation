@@ -7,11 +7,11 @@
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" routerLink="/home">Home</a></li>
-        <li class="nav__item"><a class="nav__link" routerLink="/aboutUs">About</a></li>
-        <li class="nav__item"><a class="nav__link" routerLink="/ourProducts">Products</a></li>
-        <li class="nav__item"><a class="nav__link" (click)="gotoOffers()">Offers</a></li>
-        <li class="nav__item"><a class="nav__link" routerLink="/gallery">Gallery</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/home"  routerLinkActive="active" >Home</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/aboutUs"  routerLinkActive="active">About</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/ourProducts"  routerLinkActive="active">Products</a></li>
+        <li class="nav__item"><a class="nav__link" (click)="gotoOffers()"  routerLinkActive="active">Offers</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/gallery"  routerLinkActive="active">Gallery</a></li>
         <li class="nav__item">
           <button class="nav__link" routerLink="/contactUs">
             <fa-icon [icon]="faPhone"></fa-icon> Contact

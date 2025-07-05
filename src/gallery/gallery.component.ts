@@ -6,11 +6,12 @@ import { VideosComponent } from './videos-section.component';
 import { ReviewsComponent } from './reviews-section.component';
 import { ContactCardComponent } from "../common/contact-card/contact-card.component";
 import { FooterComponent } from "../common/footer/footer.component";
+import { NavbarComponent } from "../common/navbar/navbar.component";
 
 
 @Component({
   selector: 'app-gallery',
-  imports: [CommonModule, MemoriesComponent, VideosComponent, ReviewsComponent, ContactCardComponent, FooterComponent],
+  imports: [CommonModule, MemoriesComponent, VideosComponent, ReviewsComponent, ContactCardComponent, FooterComponent, NavbarComponent],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })

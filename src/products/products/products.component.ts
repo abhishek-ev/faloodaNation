@@ -13,11 +13,12 @@ import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { DataService } from '../../service/data.service';
 import * as AOS from 'aos';
+import { NavbarComponent } from "../../common/navbar/navbar.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, FooterComponent, FontAwesomeModule],
+  imports: [CommonModule, FooterComponent, FontAwesomeModule, NavbarComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

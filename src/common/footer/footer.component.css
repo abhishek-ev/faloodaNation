@@ -36,13 +36,13 @@ footer .container {
 
 .footer-col ul li a {
     color: #2C2C2C;
-    font-size: 16px;
+    font-size: 18px;
     opacity: 70%;
     transition: 0.5s;
 }
 .footer-col ul li p {
     color: #2C2C2C;
-    font-size: 16px;
+    font-size: 18px;
     transition: 0.5s;
     opacity: 70%;
 }
@@ -53,7 +53,7 @@ footer .container {
 
 .col p {
     color: #2C2C2C;
-    font-size: 16px;
+    font-size: 18px;
     opacity: 70%;
 }
 .hr-line{
@@ -63,7 +63,7 @@ footer .container {
 .row-footer .socialIcons i {
     display: inline-block;
     color: #CA4D8C;
-    font-size: 20px;
+    font-size: 22px;
     margin: 0 10px;
     transition: 0.5s;
     background-color:#fff;
@@ -112,10 +112,10 @@ footer .container {
         height: 50px;
     }
     .footer-col ul li p {
-        font-size: 15px;
+        font-size: 16px;
     }
     .col p {
-        font-size: 15px;
+        font-size: 16px;
     }
     .footer-col h4{
         font-size: 19px;   

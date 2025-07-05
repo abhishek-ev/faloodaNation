@@ -1,0 +1,51 @@
+
+<header class="header">
+  <nav class="nav container">
+    <a routerLink="/home"class="nav__logo">
+      <img class="logo" src="images/FaloodaNationLogo.png" alt="faloodanation-logo" />
+    </a>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" routerLink="/home">Home</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/aboutUs">About</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/ourProducts">Products</a></li>
+        <li class="nav__item"><a class="nav__link" (click)="gotoOffers()">Offers</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/gallery">Gallery</a></li>
+        <li class="nav__item">
+          <button class="nav__link" routerLink="/contactUs">
+            <fa-icon [icon]="faPhone"></fa-icon> Contact
+          </button>
+        </li>
+      </ul>
+
+      <div class="nav__close" id="nav-close">
+        <fa-icon [icon]="faXmark"></fa-icon>
+      </div>
+    </div>
+
+    <!-- Toggle button -->
+    <div class="nav__toggle" id="nav-toggle">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </div>
+  </nav>
+</header>
+
+<!--==================== MAIN ====================-->
+<section class="sub-nav">
+  <div class="sub-nav__container container">
+    <div class="sub-nav__text" data-aos="fade-right"
+  data-aos-delay="200"
+  data-aos-duration="1200"
+  data-aos-easing="ease-in-out">
+      <h1>{{ title }}</h1>
+      <p>{{ subtitle }}</p>
+    </div>
+
+    <div class="sub-nav__imagesub-nav" data-aos="fade-left"
+  data-aos-delay="400"
+  data-aos-duration="1200"
+  data-aos-easing="ease-in-out">
+      <img class="main-image" [src]="image" alt="Section image" />
+    </div>
+  </div>
+</section>

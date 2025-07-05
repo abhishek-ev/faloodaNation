@@ -9,11 +9,12 @@ import { FooterComponent } from '../common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import * as AOS from 'aos';
+import { NavbarComponent } from "../common/navbar/navbar.component";
 
 
 @Component({
   selector: 'app-franchise-partner',
-  imports: [CommonModule, FontAwesomeModule, FooterComponent, FormsModule],
+  imports: [CommonModule, FontAwesomeModule, FooterComponent, FormsModule, NavbarComponent],
   templateUrl: './franchise-partner.component.html',
   styleUrl: './franchise-partner.component.css'
 })
