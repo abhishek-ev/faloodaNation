@@ -1,27 +1,59 @@
-<nav>
-    <div class="nav-container">
-        <img class="logo" src="images/FaloodaNationLogo.png" alt="faloodanation-logo" />
-        <div class="menu-toggle" (click)="toggleMenu()"><fa-icon [icon]="faBars"></fa-icon></div>
-        <ul [class.active]="menuOpen">
-            <li><a routerLink="/home">Home</a></li>
-            <li><a routerLink="/aboutUs">About</a></li>
-            <li><a routerLink="/ourProducts">Products</a></li>
-            <li><a (click)="gotoOffers()">Offers</a></li>
-            <li><a routerLink="/gallery">Gallery</a></li>
-            <li><button routerLink="/contactUs"><fa-icon [icon]="faPhone"></fa-icon> Contact</button></li>
-        </ul>
+<!--==================== HEADER ====================-->
+<header class="header">
+  <nav class="nav container">
+    <a routerLink="/home"class="nav__logo">
+      <img class="logo" src="images/FaloodaNationLogo.png" alt="faloodanation-logo" />
+    </a>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" routerLink="/home">Home</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/aboutUs">About</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/ourProducts">Products</a></li>
+        <li class="nav__item"><a class="nav__link" (click)="gotoOffers()">Offers</a></li>
+        <li class="nav__item"><a class="nav__link" routerLink="/gallery">Gallery</a></li>
+        <li class="nav__item">
+          <button class="nav__link" routerLink="/contactUs">
+            <fa-icon [icon]="faPhone"></fa-icon> Contact
+          </button>
+        </li>
+      </ul>
+
+      <div class="nav__close" id="nav-close">
+        <fa-icon [icon]="faXmark"></fa-icon>
+      </div>
     </div>
-    <div class="second">
-        <div class="nav-details">
-            <img class="nav-ellips" src="images/home-nav-ellipse.png" alt="">
-            <h1>Discover the <img class="heading-png" src="images/home-navGroupsm.png" alt="">
-                Magic of <span class="highlight">Falooda </span></h1>
-            <p>From Persia to India, reinvented for the world. Explore over 35 varieties of Faloodas, crafted with
-                passion and precision.</p>
-            <button class="review-explore-btn" routerLink="/contactUs">Explore <fa-icon [icon]="faCircleChevronRight"></fa-icon></button>
-        </div>
-        <div class="nav-image">
-            <img src="images/home-nav-fa.png" alt="falooda">
-        </div>
+
+    <!-- Toggle button -->
+    <div class="nav__toggle" id="nav-toggle">
+      <fa-icon [icon]="faBars"></fa-icon>
     </div>
-</nav>
+  </nav>
+</header>
+
+<!--==================== MAIN ====================-->
+<main class="main">
+  <section class="home">
+    <div class="home__container container">
+      <div class="home__data" data-aos="fade-right" data-aos-duration="1200">
+        <h1>
+          Discover the
+          <img class="heading-png" src="images/home-navGroupsm.png" alt="">
+          Magic of <span class="highlight">Falooda </span>
+        </h1>
+        <p>
+          From Persia to India, reinvented for the world. Explore over 35 varieties of
+          Faloodas, crafted with passion and precision.
+        </p>
+        <button class="review-explore-btn" routerLink="/contactUs" data-aos="zoom-in" data-aos-delay="300">
+          Explore <fa-icon [icon]="faCircleChevronRight"></fa-icon>
+        </button>
+      </div>
+
+      <div class="home__img" data-aos="fade-left" data-aos-duration="1400">
+        <img src="images/home-nav-fa.png" alt="Falooda Visual" />
+        <div class="home__shadow"></div>
+      </div>
+    </div>
+  </section>
+</main>
