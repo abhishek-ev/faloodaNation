@@ -18,7 +18,7 @@ import { NavbarComponent } from "../common/navbar/navbar.component";
   templateUrl: './franchise-partner.component.html',
   styleUrl: './franchise-partner.component.css'
 })
-export class FranchisePartnerComponent implements OnInit, AfterViewInit  {
+export class FranchisePartnerComponent implements OnInit, AfterViewInit {
 
   faLocationDot = faLocationDot
   faYoutube = faYoutube;
@@ -37,7 +37,7 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit  {
 
   submissionSuccess = false;
 
-  constructor(private sanitizer: DomSanitizer, private cdRef: ChangeDetectorRef  ) {
+  constructor(private sanitizer: DomSanitizer, private cdRef: ChangeDetectorRef) {
     this.setLocation('Falooda Nation');
   }
 
@@ -52,6 +52,25 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit  {
     // Optional: delay success message until Jabwn returns — but iframe won’t give callback
     this.submissionSuccess = true;
 
+    event.preventDefault();
+
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    fetch(this.apiUrl, {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Form submission successful:', data);
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+      });
+
+
+
     // Reset input values manually
     setTimeout(() => {
       this.submissionSuccess = false;
@@ -62,14 +81,14 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit  {
     }, 4000);
   }
 
-ngOnInit(): void {
-  AOS.init({
-    duration: 1000,          
-    easing: 'ease-in-out',  
-    once: true,             
-    offset: 220            
-  });
-}
+  ngOnInit(): void {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 220
+    });
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -78,11 +97,11 @@ ngOnInit(): void {
   }
 
   animationPicker(index: number, total: number): string {
-  return index % 2 === 0 ? 'fade-left' : 'fade-right';
-}
+    return index % 2 === 0 ? 'fade-left' : 'fade-right';
+  }
 
-animationTiming(index: number, total: number): string {
-  return `${900 + (index * 100)}`;
-}
+  animationTiming(index: number, total: number): string {
+    return `${900 + (index * 100)}`;
+  }
 
 }
