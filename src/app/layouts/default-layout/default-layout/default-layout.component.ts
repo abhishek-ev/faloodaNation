@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-default-layout',
-  imports: [NavbarComponent, RouterModule],
+  imports: [RouterModule],
   templateUrl: './default-layout.component.html',
 })
 export class DefaultLayoutComponent {
