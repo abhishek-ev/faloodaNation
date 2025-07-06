@@ -26,7 +26,16 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   constructor(private route: Router, private dataService: DataService) { }
 
   faCircleChevronRight = faCircleChevronRight;
-  categoryData: any[] = [];
+  categoryData: {
+    id: string,
+    name: string,
+    description: string,
+    image: string,
+    items: {
+      name: string
+    }[],
+    active_item: string
+  }[] = [];
   selectedImages: { [key: string]: any } = {};
   popupImage: string = '';
   popupDescription: string = '';
@@ -39,6 +48,11 @@ export class ProductsComponent implements OnInit, AfterViewInit {
       .getCategoryWithMenuItems()
       .then((data) => {
         this.categoryData = data;
+
+        this.categoryData.forEach((category) => {
+          category.active_item = category.items[0]?.name || ''; // Set the first item as the default active value;
+        });
+
       })
       .catch((err) => {
         console.error('Error fetching data', err);
@@ -84,6 +98,12 @@ export class ProductsComponent implements OnInit, AfterViewInit {
 
   onItemClick(categoryId: string, item: any): void {
     this.selectedImages[categoryId] = item;
+    item.active_item = item.name;
+    this.categoryData.forEach((category) => {
+      if (category.id === categoryId) {
+        category.active_item = item.name;
+      }
+    })
   }
 
   onImageClick(image: string, description: string): void {
