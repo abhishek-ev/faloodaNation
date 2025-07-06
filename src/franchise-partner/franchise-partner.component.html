@@ -1,25 +1,22 @@
-<app-navbar [title]="'CONNECT WITH US'"
-  [subtitle]="'Get In Touch'"
-  [image]="'images/connectNav.png'"></app-navbar>
+<app-navbar [title]="'CONNECT WITH US'" [subtitle]="'Get In Touch'" [image]="'images/connectNav.png'"></app-navbar>
 <div class="franchise" id="franchise">
   <div class="franchise-form-section" data-aos="fade-left">
     <div class="form-content">
       <h2 data-aos="fade-up">Become a Franchise Partner</h2>
       <p>Fill out the form to start your journey with Falooda Nation</p>
-      <form ngNoForm [attr.action]="apiUrl" method="POST" target="hidden_iframe"
-        (submit)="onSubmitSuccess($event)" enctype="multipart/form-data">
+      <form (submit)="onSubmitSuccess($event)">
 
         <input type="text" name="name" placeholder="Name" required #name>
-        <input type="tel" name="phone" placeholder="Phone No." pattern="^[0-9]{10}$" required #phone>
+        <input type="tel" name="phone" placeholder="Phone No." required #phone>
         <input type="email" name="email" placeholder="Email" required #email>
         <textarea name="message" placeholder="Message" required #message></textarea>
 
         <button type="submit">Submit</button>
 
-        <div *ngIf="submissionSuccess" class="success-msg">Mail sent successfully!</div>
+        <!-- <div *ngIf="submissionSuccess" class="success-msg">Mail sent successfully!</div> -->
       </form>
 
-      <iframe name="hidden_iframe" style="display: none;"></iframe>
+      <!-- <iframe name="hidden_iframe" style="display: none;"></iframe> -->
 
       <div *ngIf="submissionSuccess" class="success-msg">Mail sent successfully!</div>
     </div>
@@ -44,8 +41,9 @@
   <section class="branches-section">
     <h2>Our Branches</h2>
     <div class="branch-grid">
-      <div class="branch-card" *ngFor="let branch of branches; let i = index" (click)="setLocation(branch.location)"[attr.data-aos]="animationPicker(i, branches.length)"
-      [attr.data-aos-duration]="animationTiming(i, branches.length)">
+      <div class="branch-card" *ngFor="let branch of branches; let i = index" (click)="setLocation(branch.location)"
+        [attr.data-aos]="animationPicker(i, branches.length)"
+        [attr.data-aos-duration]="animationTiming(i, branches.length)">
         <fa-icon class="location-icon" [icon]="faLocationDot"></fa-icon>
         <h3>{{ branch.location }}</h3>
         <ul>

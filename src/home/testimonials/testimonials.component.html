@@ -1,16 +1,15 @@
 <section class="testimonial-section" data-aos="fade-up">
-    <p class="subtitle">What Our Customers Say!</p>
-    <h2 class="title">LOVED BY FOOD ENTHUSIASTS <br />EVERYWHERE!</h2>
-  
-    <div class="slider-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-      <div class="slider" [style.transform]="'translateX(-' + scrollPosition + 'px)'">
-        <!-- Duplicate testimonials array twice for seamless looping -->
-        <div class="card" *ngFor="let t of testimonials.concat(testimonials)" data-aos="zoom-in" data-aos-delay="100" (click)="gotoReviews()">
-          <div class="quote">❝</div>
-          <p>{{ t.message }}</p>
-          <strong>- {{ t.name }}</strong>
-        </div>
+  <p class="subtitle">What Our Customers Say!</p>
+  <h2 class="title">LOVED BY FOOD ENTHUSIASTS <br />EVERYWHERE!</h2>
+
+  <div class="slider-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <div class="slider" [style.transform]="'translateX(-' + scrollPosition + 'px)'">
+      <!-- Duplicate testimonials array twice for seamless looping -->
+      <div class="card" *ngFor="let t of testimonials.concat(testimonials)" (click)="gotoReviews()">
+        <div class="quote">❝</div>
+        <p>{{ t.message }}</p>
+        <strong>- {{ t.name }}</strong>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
