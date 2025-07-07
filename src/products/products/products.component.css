@@ -29,7 +29,7 @@
     @media (min-width: 768px) {
       flex-direction: row;
       align-items: stretch;
-      /* height: 420px; */
+      height: 420px;
     }
 
     .category-details {
@@ -69,7 +69,7 @@
         margin: 0;
         flex-grow: 1;
         overflow-y: auto;
-        /* max-height: 220px; */
+        max-height: 280px;
         padding-right: 0.5rem;
         scroll-behavior: smooth;
         cursor: pointer;
