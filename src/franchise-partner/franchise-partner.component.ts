@@ -35,7 +35,8 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
   @ViewChild('email') emailInput!: ElementRef;
   @ViewChild('message') messageInput!: ElementRef;
 
-  submissionSuccess = false;
+  submissionSuccess: boolean = false;
+  errorMessage: string = '';
 
   constructor(private sanitizer: DomSanitizer, private cdRef: ChangeDetectorRef) {
     this.setLocation('Falooda Nation');
@@ -49,37 +50,54 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
   }
 
   onSubmitSuccess(event: Event) {
-    // Optional: delay success message until Jabwn returns — but iframe won’t give callback
-    this.submissionSuccess = true;
+  event.preventDefault(); 
 
-    event.preventDefault();
+  const form = event.target as HTMLFormElement;
+  const formData = new FormData(form);
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
+  const name = this.nameInput.nativeElement.value.trim();
+  const phone = this.phoneInput.nativeElement.value.trim();
+  const email = this.emailInput.nativeElement.value.trim();
+  const message = this.messageInput.nativeElement.value.trim();
 
-    fetch(this.apiUrl, {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Form submission successful:', data);
-      })
-      .catch(error => {
-        console.error('Form submission error:', error);
-      });
-
-
-
-    // Reset input values manually
+  if (!name || !phone || !email || !message) {
+    this.errorMessage = 'Please fill in all fields to send the mail.';
+    this.submissionSuccess = false;
     setTimeout(() => {
-      this.submissionSuccess = false;
-      this.nameInput.nativeElement.value = '';
-      this.phoneInput.nativeElement.value = '';
-      this.emailInput.nativeElement.value = '';
-      this.messageInput.nativeElement.value = '';
-    }, 4000);
+    this.errorMessage = '';}, 2000);
+    return;
   }
+
+  this.errorMessage = '';
+
+  fetch(this.apiUrl, {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Form submission successful:', data);
+      this.submissionSuccess = true;
+
+      // Reset form after 4 seconds
+      setTimeout(() => {
+        this.submissionSuccess = false;
+        this.nameInput.nativeElement.value = '';
+        this.phoneInput.nativeElement.value = '';
+        this.emailInput.nativeElement.value = '';
+        this.messageInput.nativeElement.value = '';
+      }, 4000);
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      this.errorMessage = 'There was an error sending your message. Please try again later.';
+    });
+}
 
   ngOnInit(): void {
     AOS.init({

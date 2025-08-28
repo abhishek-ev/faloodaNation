@@ -12,13 +12,9 @@
         <textarea name="message" placeholder="Message" required #message></textarea>
 
         <button type="submit">Submit</button>
-
-        <!-- <div *ngIf="submissionSuccess" class="success-msg">Mail sent successfully!</div> -->
       </form>
-
-      <!-- <iframe name="hidden_iframe" style="display: none;"></iframe> -->
-
       <div *ngIf="submissionSuccess" class="success-msg">Mail sent successfully!</div>
+      <div *ngIf="errorMessage" class="success-msg">{{ errorMessage }}</div>
     </div>
 
     <div class="map-section" data-aos="zoom-in">

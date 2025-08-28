@@ -10,13 +10,14 @@ export const SOCIAL_MEDIA_LINKS = {
   linkedin: '',
 }
 export const Branches = [
-  { location: 'Calicut', branches: ['Sks Street', 'Gokulam Mall', 'Hilite Mall', 'Pottammal', 'Lulu Mall'] },
-  { location: 'Trivandrum', branches: ['Lulu Mall', 'Mall of Travancore', 'Kovalam'] },
-  { location: 'Kochi', branches: ['Kacher', 'Lulu Mall', 'Forum Mall', 'Edappally', 'Thoppumpady', 'Kakkanad'] },
-  { location: 'Dubai', branches: ['Al Karama', 'Al Qusais', 'Al Warqa'] },
-  { location: 'Kannur', branches: ['SBI Park', 'Source Centre'] },
-  { location: 'Lucknow', branches: ['Lulu Mall'] },
-  { location: 'Other Locations', branches: ['Thrissur', 'Hyderabad', 'Chennai', 'Kollam', 'Thangassery', 'Perinthalmanna', 'Kottayam', 'Palakkad'] }
+  { location: 'Kannur', branches: ['SN Park', 'SECURA Centre'] },
+  { location: 'Calicut', branches: ['Silk Street', 'Gokulam Mall', 'Hilite Mall', 'Pottammal', 'Lulu Mall'] },
+  { location: 'Kochi', branches: ['Kaloor', 'Lulu Mall', 'Forum Mall', 'Edappally', 'Thoppumpady', 'Kakkanad'] },
+  { location: 'Trivandrum', branches: ['Lulu Mall', 'Mall of Travancore', 'Kuruvankonam'] },
+  { location: 'Tamil Nadu', branches: ['Chennai', 'Thanjavur','Coimbatore'] },
+  { location: 'Dubai', branches: ['Al Karama', 'Al Qusais'] },
+  { location: 'Abu Dhabi', branches: ['Shabiya 11'] },
+  { location: 'Other Locations', branches: ['Thrissur', 'Kollam', 'Perinthalmanna', 'Kottayam', 'Palakkad'] }
 ];
 
 // Products Page Data *****************
