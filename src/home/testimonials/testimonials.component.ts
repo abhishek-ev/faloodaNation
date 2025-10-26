@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { reviews } from '../../common/constants';
 import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-testimonials',
@@ -12,7 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './testimonials.component.css'
 })
 export class TestimonialsComponent implements OnInit,OnDestroy {
-  constructor(private router:Router){}
+  constructor(private router:Router, private sanitizer: DomSanitizer){}
   faCircleChevronRight = faCircleChevronRight
   currentIndex = 0;
   isPaused = false;

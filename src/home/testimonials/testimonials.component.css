@@ -6,99 +6,104 @@
   text-align: center;
   border-radius: 20px;
   position: relative;
-  }
-  
-  .subtitle {
+}
+
+.subtitle {
   color: #CA4E8D;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
   text-transform: uppercase;
-  }
-  
-  .title {
-  font-size: 50px;
+}
+
+.title {
+  font-size: 48px;
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 40px;
   font-family: 'Phudu', sans-serif;
   color: #2C2C2C;
-  }
-  
-  .slider-container {
+}
+
+.slider-container {
   overflow: hidden;
   white-space: nowrap;
   cursor: grab;
   border-radius: 20px;
   position: relative;
-  }
-  
-  .slider {
-    display: inline-flex;
-    gap: 22px;
-    transition: transform 0.1s linear;
-    padding-bottom: 10px;
-  }
-  
-  .card {
+}
+
+.slider {
+  display: inline-flex;
+  gap: 22px;
+  transition: transform 0.1s linear;
+  padding-bottom: 10px;
+}
+
+/*  Fixed and responsive card size */
+.card {
   flex: 0 0 auto;
-  background-color: #ffffff;
+  background-color: #fffdfd;
   border-radius: 20px;
   padding: 25px 20px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: space-between; */
   text-align: center;
   height: 260px;
-  min-width: 300px;
-  max-width: 100%;
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.08);
+  width: 400px; 
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.09);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInCard 0.8s ease-in-out both;
-   overflow: hidden;
-  }
-  .card:hover {
+  overflow: hidden;
+}
+
+.card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
-  
-  .card .quote {
-    font-size: 64px;
+
+.card .quote {
+  font-size: 64px;
   color: #139186;
-  margin-bottom: 10px;
-  }
-  
-  .card p {
-    font-size: 16px;
+  /* margin-bottom: 6px; */
+}
+
+/* Message with overflow control */
+.card p {
+   font-size: 16px;
   color: #333;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-bottom: 12px;
   line-height: 1.5;
-  margin-bottom: 12px;
-  line-height: 1.5;
-  overflow-y: auto;         
-  max-height: 120px;       
-  padding-right: 5px;     
-  scrollbar-width: thin;
-  }
-
-  .card p::-webkit-scrollbar {
-  width: 4px;
+  display: -webkit-box;               
+  -webkit-line-clamp: 3;              
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;                  
+  position: relative;
+  padding: 0 6px;
+  white-space: normal;
+}
+.see-more {
+  color: #CA4E8D;
+  font-weight: 600;
+  cursor: pointer;
+}
+.see-more:hover {
+  text-decoration: underline;
 }
 
-.card p::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-  
-  .card strong {
-    font-size: 16px;
+/* Name styling */
+.card strong {
+  font-size: 16px;
   font-weight: bold;
   color: #2C2C2C;
-  }
-  
-  /* Animation */
+}
+
+/* Fade animation */
 @keyframes fadeInCard {
   0% {
     opacity: 0;
@@ -110,36 +115,38 @@
   }
 }
 
-
-  @media (max-width: 640px) {
-    .testimonial-section {
-     padding: 40px 10px;
+/*  Mobile adjustments */
+@media (max-width: 640px) {
+  .testimonial-section {
+    padding: 40px 10px;
     border-radius: 0;
-    }
-  .slider {
-    gap: 16px; 
   }
-    .card {
-      width: 260px;
-      height: 240px;
+
+  .slider {
+    gap: 16px;
+  }
+
+  .card {
+    width: 260px; 
+    height: 240px;
     padding: 20px 15px;
-    }
-  
-    .title {
-      font-size: 35px;
+  }
+
+  .title {
+    font-size: 32px;
     line-height: 1.3;
-    }
-    .card .quote {
-        font-size: 50px;
-        color: #139186;
-      }
-      
-      .card p {
-        font-size: 14px;
-        max-height: 100px;
-      }
-      .card strong {
+  }
+
+  .card .quote {
+    font-size: 50px;
+  }
+
+  .card p {
+    font-size: 14px;
+    max-height: 90px;
+  }
+
+  .card strong {
     font-size: 14px;
   }
-  }
-  
+}

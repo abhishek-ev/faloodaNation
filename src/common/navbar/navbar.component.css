@@ -39,24 +39,9 @@ a:hover {
   overflow: hidden;
 }
 
-.nav__item button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
-  transition: all 0.4s ease;
-}
-
-.nav__item button:hover::before {
-  left: 100%;
-}
-
 .nav__item button:hover {
-  background: linear-gradient(135deg, #fdeef4, #ffdae5);
-  color: #b03b76;
+  background: #b03b76;
+  color: #fff;
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 14px rgba(202, 77, 140, 0.3);
 }
@@ -177,6 +162,12 @@ img {
   color: #333;
   font-family: 'Phudu', sans-serif;
 }
+.titlespan{
+  color: #b03b76;
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: 'Phudu', sans-serif;
+}
 
 .sub-nav__text p {
   color: #5f5e5e;
@@ -223,6 +214,9 @@ img {
   }
 
   .sub-nav__text h1 {
+    font-size: 2.5rem;
+  }
+  .titlespan{
     font-size: 2.5rem;
   }
 

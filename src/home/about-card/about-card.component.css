@@ -68,9 +68,8 @@
 
 
 .learn-more-btn:hover {
-  background-color: #146767;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  transform: scale(1.02);
+  transform: translateY(1px);
 }
 
 .image-section {
@@ -422,8 +421,7 @@
 }
 
 .learn-more-btn:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .sub-text {

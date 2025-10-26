@@ -38,17 +38,19 @@ footer .container {
     color: #2C2C2C;
     font-size: 18px;
     opacity: 70%;
-    transition: 0.5s;
+    transition: 0.1s;
 }
 .footer-col ul li p {
     color: #2C2C2C;
     font-size: 18px;
-    transition: 0.5s;
+    transition: 0.3s;
     opacity: 70%;
 }
 
 .footer-col ul li a:hover {
-    opacity: 100%;
+    /* opacity: 100%; */
+    font-size: 19px;
+    font-weight: 550;
 }
 
 .col p {
@@ -65,14 +67,15 @@ footer .container {
     color: #CA4D8C;
     font-size: 22px;
     margin: 0 10px;
-    transition: 0.5s;
+    transition: 0.2s;
     background-color:#fff;
     padding: 10px 12px;
     border-radius: 100%;  
 }
 
 .row-footer .socialIcons i:hover {
-    color: #72bcb6;
+    color: #66aea8;
+    font-size: 24px;
 }
 
 @media(max-width:700px) {
