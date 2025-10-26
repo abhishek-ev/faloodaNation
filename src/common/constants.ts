@@ -3,11 +3,11 @@
 export const SOCIAL_MEDIA_LINKS = {
   facebook: 'https://www.facebook.com/share/1YfzqPbwNV/',
   youtube: 'https://www.youtube.com/results?search_query=Falooda+Nation',
-  instagram: 'https://www.instagram.com/falooda_nation/profilecard/?igsh=MWVnaDNmOXdtam5hYg==',
+  instagram: 'https://www.instagram.com/faloodanation.in',
   contactnumber: '+91 98462 17021',
   whatsappnumber: '+91 8086288299',
   gmail: 'director@thegreenbay.in',
-  linkedin: '',
+  linkedin: 'mailto:director@thegreenbay.in',
 }
 export const Branches = [
   { location: 'Kannur', branches: ['SN Park', 'SECURA Centre'] },
