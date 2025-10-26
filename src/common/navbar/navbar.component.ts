@@ -1,8 +1,8 @@
-import { Component, AfterViewInit, ViewEncapsulation,Input } from '@angular/core';
+import { Component, AfterViewInit,Input } from '@angular/core';
 import { RouterLink, Router, } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faPhone, faBars, faCircleChevronRight,faXmark} from '@fortawesome/free-solid-svg-icons' 
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import AOS from 'aos';
 
 @Component({
