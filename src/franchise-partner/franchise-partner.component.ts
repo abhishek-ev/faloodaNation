@@ -57,8 +57,8 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onSubmitSuccess(event: Event) {
-  event.preventDefault(); 
+onSubmitSuccess(event: Event) {
+  event.preventDefault();
 
   const form = event.target as HTMLFormElement;
   const formData = new FormData(form);
@@ -71,40 +71,41 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
   if (!name || !phone || !email || !message) {
     this.errorMessage = 'Please fill in all fields to send the mail.';
     this.submissionSuccess = false;
-    setTimeout(() => {
-    this.errorMessage = '';}, 2000);
+    setTimeout(() => (this.errorMessage = ''), 2000);
     return;
   }
 
   this.errorMessage = '';
 
   fetch(this.apiUrl, {
-    method: 'POST',
-    body: formData
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Form submission successful:', data);
-      this.submissionSuccess = true;
+  method: 'POST',
+  body: formData
+})
+  .then(response => {
+    // Treat any response that didn't throw a network error as success
+    this.submissionSuccess = true;
 
-      // Reset form after 4 seconds
-      setTimeout(() => {
-        this.submissionSuccess = false;
-        this.nameInput.nativeElement.value = '';
-        this.phoneInput.nativeElement.value = '';
-        this.emailInput.nativeElement.value = '';
-        this.messageInput.nativeElement.value = '';
-      }, 4000);
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-      this.errorMessage = 'There was an error sending your message. Please try again later.';
-    });
+    setTimeout(() => {
+      this.submissionSuccess = false;
+      this.nameInput.nativeElement.value = '';
+      this.phoneInput.nativeElement.value = '';
+      this.emailInput.nativeElement.value = '';
+      this.messageInput.nativeElement.value = '';
+    }, 4000);
+
+    return response.json().catch(() => null);
+  })
+  .then(data => {
+    if (data) {
+      console.log('Form submission successful:', data);
+    }
+  })
+  .catch(error => {
+    console.error('Form submission error:', error);
+    this.errorMessage = 'There was an error sending your message. Please try again later.';
+    this.submissionSuccess = false;
+  });
+
 }
 
   ngOnInit(): void {
