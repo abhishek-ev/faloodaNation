@@ -34,6 +34,7 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
   @ViewChild('phone') phoneInput!: ElementRef;
   @ViewChild('email') emailInput!: ElementRef;
   @ViewChild('message') messageInput!: ElementRef;
+  @ViewChild('mapSection') mapSection!: ElementRef;
 
   submissionSuccess: boolean = false;
   errorMessage: string = '';
@@ -47,6 +48,13 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
     const branchList = matchedBranch ? matchedBranch.branches.join(', ') : '';
     const query = `Falooda Nation ${location} in ${branchList}`;
     this.selectedLocation = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`);
+    // smooth scroll to map section
+    if (this.mapSection) {
+      this.mapSection.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
 
   onSubmitSuccess(event: Event) {
