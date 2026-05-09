@@ -1,0 +1,55 @@
+.branch-page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2{
+  font-weight: 800;
+}
+
+.branch-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.branch-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.branch-hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.branch-map {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.branch-details, .branch-reviews, .branch-more-info {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.branch-details h2, .branch-reviews h2, .branch-more-info h2 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+}
+
+.branch-details p, .branch-reviews p{
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.branch-more-info a {
+  margin-bottom: 0.5rem;
+  color: #CA4D8C;
+  text-decoration: underline;
+}

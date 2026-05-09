@@ -7,6 +7,7 @@ import { ReviewsComponent } from '../gallery/reviews-section.component';
 import { HomeComponent } from '../home/home/home.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout/home-layout.component';
 import { DefaultLayoutComponent } from './layouts/default-layout/default-layout/default-layout.component';
+import { VijayawadaComponent } from '../franchise-partner/branches/vijayawada/vijayawada.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,7 @@ export const routes: Routes = [
       children: [
         { path: 'aboutUs', component: AboutComponent },
         { path: 'contactUs', component: FranchisePartnerComponent },
+        { path: 'vijayawada', component: VijayawadaComponent },
         { path: 'gallery', component: GalleryComponent },
         { path: 'ourProducts', component: ProductsComponent },
         { path: 'review', component:ReviewsComponent},

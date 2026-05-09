@@ -15,8 +15,8 @@ export const Branches = [
   { location: 'Kochi', branches: ['Kaloor', 'Lulu Mall', 'Forum Mall', 'Edappally', 'Thoppumpady', 'Kakkanad'] },
   { location: 'Trivandrum', branches: ['Lulu Mall', 'Mall of Travancore', 'Kuruvankonam'] },
   { location: 'Tamil Nadu', branches: ['Chennai', 'Thanjavur','Coimbatore'] },
-  { location: 'Dubai', branches: ['Al Karama', 'Al Qusais'] },
-  { location: 'Abu Dhabi', branches: ['Shabiya 11'] },
+  { location: 'Dubai & Abu Dhabi', branches: ['Al Karama', 'Al Qusais', 'Shabiya 11'] },
+  { location: 'Andhra Pradesh', branches: ['Vijayawada'] },
   { location: 'Other Locations', branches: ['Thrissur', 'Kollam', 'Perinthalmanna', 'Kottayam', 'Palakkad'] }
 ];
 

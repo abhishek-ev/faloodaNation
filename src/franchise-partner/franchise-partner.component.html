@@ -43,7 +43,7 @@
         <fa-icon class="location-icon" [icon]="faLocationDot"></fa-icon>
         <h3>{{ branch.location }}</h3>
         <ul>
-          <li *ngFor="let b of branch.branches">{{ b }}</li>
+          <li *ngFor="let b of branch.branches" (click)="setBranchLocation(b)">{{ b }}</li>
         </ul>
       </div>
     </div>

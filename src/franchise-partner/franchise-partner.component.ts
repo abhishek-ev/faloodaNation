@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import * as AOS from 'aos';
 import { NavbarComponent } from "../common/navbar/navbar.component";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
   submissionSuccess: boolean = false;
   errorMessage: string = '';
 
-  constructor(private sanitizer: DomSanitizer, private cdRef: ChangeDetectorRef) {
+  constructor(private sanitizer: DomSanitizer, private cdRef: ChangeDetectorRef, private router: Router) {
     this.setLocation('Falooda Nation');
   }
 
@@ -54,6 +55,14 @@ export class FranchisePartnerComponent implements OnInit, AfterViewInit {
         behavior: 'smooth',
         block: 'start'
       });
+    }
+    if(location ==='Andhra Pradesh'){
+      this.setBranchLocation('Vijayawada');
+    }
+  }
+  setBranchLocation(branch: string) {
+    if (branch === 'Vijayawada') {
+      this.router.navigate(['/vijayawada'])
     }
   }
 

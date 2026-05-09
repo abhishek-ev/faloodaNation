@@ -1,0 +1,35 @@
+<app-navbar [title]="'Falooda Nation'" [titlespan]="'VIJAYAWADA'" [subtitle]="'Falooda Nation in Andhra Pradesh'" [image]="'images/connectNav.png'"></app-navbar>
+
+<section class="branch-page">
+  <div class="branch-hero">
+    <h1>Falooda Nation Vijayawada</h1>
+    <p>Guru Nanak Colony Road, Kanaka Durga Gazetted Officers Colony, Vijayawada, Andhra Pradesh 520008</p>
+    <p>Phone: +91 98462 17021</p>
+  </div>
+
+  <div class="branch-map">
+    <iframe [src]="selectedLocation" width="100%" height="350" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="branch-details">
+    <h2>About this branch</h2>
+    <p>Falooda Nation Vijayawada brings over 35 unique falooda varieties to Andhra Pradesh, offering a perfect blend of taste, freshness, and premium ingredients. From classic kulfi falooda to chocolate and dry fruit specials, it has become a popular destination for the best falooda in Vijayawada. Known for its rich flavors, refreshing desserts, and vibrant menu, Falooda Nation is a must-visit spot for dessert lovers and food enthusiasts across Andhra Pradesh.</p>
+  </div>
+
+  <!-- <div class="branch-reviews">
+    <h2>Customer Reviews</h2>
+    <p>“Excellent falooda and friendly service.”</p>
+    <p>“Best local branch in Vijayawada.”</p>
+  </div> -->
+
+  <div class="branch-more-info">
+    <h2>More Information</h2>
+    <a href="https://www.freelistingindia.in/listings/falooda-nation-vijayawada" target="_blank" rel="noopener noreferrer">Visit our listing on Freelisting India</a>
+  </div>
+
+  <script type="application/ld+json">
+    {{ schema | json }}
+  </script>
+</section>
+
+<app-footer></app-footer>
